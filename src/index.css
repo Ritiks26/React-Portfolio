@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "almarena";
+  src: url("../src/assets/almarenaneue-regular.otf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "almarena-italic";
+  src: url("../src/assets/almarenaneue-ds-regular-it.otf");
+  font-weight: 400;
+}
+
+:root {
+  --bg-black: black;
+  --bg-white: white;
+  --bg-whitesmoke: whitesmoke;
+  --font-white: white;
+  --font-black: black;
+  --font-primary: rgb(161, 161, 161);
+
+  /* LOADED FONTS */
+
+  --font-secondary: "general sans";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "almarena";
+  background-color: var(--bg-white);
+
+  &::selection {
+    background-color: #dadada;
+    color: black;
+  }
+}
