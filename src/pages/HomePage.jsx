@@ -1,4 +1,4 @@
-import { Hero } from "./HeroPage";
+import { HeroPage } from "./HeroPage";
 import { About } from "./About";
 import { Work } from "./Work";
 import { Contact } from "./Contact";
@@ -7,7 +7,7 @@ import "./HomePage.css";
 export function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroPage />
       <About />
       <Work />
       <Contact />

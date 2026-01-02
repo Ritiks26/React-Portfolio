@@ -1,66 +1,44 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { useRef } from "react";
 import { WorkProject } from "../components/WorkProject";
 import "./Work.css";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
-export function Work({ workSummary, setWorkSummary }) {
-  // const workContainerRef = useRef(null);
+export function Work() {
+  const workRef = useRef(null);
   useGSAP(() => {
-    if (workSummary) {
-      gsap.to(".project", {
-        autoAlpha: 1,
+    document.fonts.ready.then(() => {
+      const splitWorkPara = SplitText.create(".work-content p", {
+        type: "chars, words, lines",
+      });
+
+      gsap.set(splitWorkPara.lines, {
+        clipPath: "inset(0% 0% 100% 0)",
+        y: 20,
+      });
+
+      gsap.to(splitWorkPara.lines, {
+        clipPath: "inset(0% 0% 0% 0)",
+        y: 0,
+        stagger: 0.08,
         duration: 0.6,
-        ease: "power3.out",
-        display: "flex",
+        ease: "Power4.out",
+        scrollTrigger: {
+          trigger: workRef.current,
+          scroller: "#smooth-wrapper",
+          start: "top 75%",
+          end: "+=120%",
+        },
       });
-
-      gsap.fromTo(
-        ".project-summary",
-        { scale: 0.9, y: 30 },
-        {
-          scale: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        }
-      );
-    } else {
-      gsap.to(".project-summary", {
-        scale: 0.9,
-        duration: 0.4,
-        ease: "power3.in",
-      });
-
-      gsap.to(".project", {
-        autoAlpha: 0,
-        duration: 0.4,
-        ease: "power3.in",
-      });
-    }
-  }, [workSummary]);
-
-  // useGSAP(() => {
-  //   gsap.to(workContainerRef.current, {
-  //     scale: 0.85,
-  //     rotate: 3,
-  //     scrollTrigger: {
-  //       trigger: workContainerRef.current,
-  //       start: "bottom 100%",
-  //       end: "+=120%",
-  //       scrub: true,
-  //       pin: true,
-  //       pinSpacing: false,
-  //     },
-  //   });
-  // });
-
+    });
+  }, []);
   return (
     <>
-      <div className="work-section">
+      <div className="work-section" ref={workRef}>
         <div className="work-container">
           <ul>
             <li>WORK</li>
@@ -75,10 +53,7 @@ export function Work({ workSummary, setWorkSummary }) {
               and scalable frontend interfaces.
             </p>
           </div>
-          <WorkProject
-            setWorkSummary={setWorkSummary}
-            workSummary={workSummary}
-          />
+          <WorkProject />
         </div>
       </div>
     </>

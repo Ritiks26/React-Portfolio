@@ -1,6 +1,6 @@
 header {
   position: fixed;
-  bottom: 2%;
+  bottom: 10px;
   left: 0;
   right: 0;
   z-index: 50;
@@ -15,9 +15,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 1.75rem;
   border-radius: 1rem;
-  border: 1px solid rgb(54, 54, 54);
+  border: 2px solid gray;
 
   .nav ul {
     display: flex;

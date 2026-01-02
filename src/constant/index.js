@@ -1,9 +1,5 @@
 export const menus = [
   {
-    id: "/home",
-    title: "Home",
-  },
-  {
     id: "/about",
     title: "About",
   },
