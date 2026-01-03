@@ -30,7 +30,7 @@ function App() {
       wrapper: smoothWrapperRef.current,
       content: smoothContentRef.current,
       smooth: 1.7,
-      effects: true,
+      smoothTouch: 0.1,
     });
 
     parallax.effects(".parallax-image", {

@@ -2,12 +2,13 @@
   background-color: var(--bg-white);
   height: 100vh;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  z-index: -1;
 }
 
 .hero-content {
@@ -19,14 +20,16 @@
 }
 
 .heading {
-  width: 85%;
+  width: 95%;
   h1 {
-    font-size: clamp(4rem, 16vw, 11rem);
-    line-height: 1;
+    font-size: clamp(4.5rem, 16vw, 11rem);
+    line-height: 1.25;
     padding: 0;
     margin: 0;
+    text-wrap: nowrap;
     font-weight: 600;
     text-align: left;
+    overflow: hidden;
 
     &:nth-child(2) {
       text-align: right;
@@ -92,4 +95,24 @@
       border-radius: 50%;
     }
   }
+}
+
+.oChar,
+.oCharSecond {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oChar-icon {
+  position: absolute;
+  width: 0.55em;
+  object-fit: contain;
+}
+
+.oCharSecond-icon {
+  position: absolute;
+  width: 0.6em;
+  object-fit: contain;
 }

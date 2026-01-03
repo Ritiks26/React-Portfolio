@@ -4,157 +4,131 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import icon from "../../src/assets/pics/worm.png";
 import circleIcon from "../../src/assets/pics/circle.png";
-import { useRef } from "react";
+import { use, useRef } from "react";
 import "./HeroPage.css";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export function HeroPage() {
   const heroSectionRef = useRef(null);
-  // useGSAP(() => {
-  //   const splitHeading = SplitText.create(".heading-first", {
-  //     type: "chars, words, lines",
-  //     linesClass: "heading-line",
-  //   });
 
-  //   const splitText = SplitText.create(".heading-second", {
-  //     type: "chars, words, lines",
-  //     linesClass: "heading-line",
-  //   });
+  useGSAP(() => {
+    document.fonts.ready.then(() => {
+      const splitTextHeading = SplitText.create(".heading h1", {
+        type: "chars, words, lines",
+      });
 
-  //   // const oCharHeading = splitHeading.chars[2];
-  //   // const oCharText = splitText.chars[5];
-  //   const oCharHeading = splitHeading.chars.find(
-  //     (ch) => ch.textContent.toLowerCase() === "o"
-  //   );
+      const alloChar = splitTextHeading.chars.filter(
+        (ch) => ch.textContent.toLowerCase() === "o"
+      );
 
-  //   const oCharText = splitText.chars.find(
-  //     (ch) => ch.textContent.toLowerCase() === "o"
-  //   );
+      const oChar = alloChar[0];
+      const oCharSecond = alloChar[1];
 
-  //   const iconElem = document.querySelector(".icon");
-  //   const circleIconElem = document.querySelector(".circle-icon");
+      gsap.set(splitTextHeading.chars, {
+        yPercent: 200,
+      });
 
-  //   const oCharHeadingElem = oCharHeading.getBoundingClientRect();
-  //   const oCharHeadingParentElem =
-  //     oCharHeading.parentElement.getBoundingClientRect();
+      gsap.set(".oChar-icon", {
+        yPercent: 200,
+      });
 
-  //   const oCharTextElem = oCharText.getBoundingClientRect();
-  //   const oCharTextParentElem = oCharText.parentElement.getBoundingClientRect();
+      gsap.set(".oCharSecond-icon", {
+        yPercent: 200,
+      });
 
-  //   gsap.set(iconElem, {
-  //     left: oCharHeadingElem.left - oCharHeadingParentElem.left,
-  //     top: oCharHeadingElem.top - oCharHeadingParentElem.top,
-  //   });
+      const tl = gsap.timeline();
 
-  //   gsap.set(circleIconElem, {
-  //     left: oCharTextElem.left - oCharTextParentElem.left,
-  //     top: oCharTextElem.top - oCharTextParentElem.top,
-  //   });
+      tl.to(splitTextHeading.chars, {
+        yPercent: 0,
+        stagger: 0.05,
+        ease: "power4.out",
+      })
+        .to(oChar, {
+          yPercent: 200,
+          ease: "back.in(2.2)",
+        })
+        .to(".oChar-icon", {
+          yPercent: 0,
+          duration: 0.75,
+          opacity: 1,
+          ease: "back.out(2.2)",
+        })
+        .to(".oChar-icon", {
+          yPercent: -100,
+          opacity: 0,
+          ease: "back.in(2.2)",
+        })
+        .to(oChar, {
+          yPercent: 0,
+          ease: "back.out(2.2)",
+        })
+        .to(".oChar-icon", {
+          rotate: 5,
+          scale: 0.45,
+          opacity: 1,
+          yPercent: 32,
+        })
+        .to(".oChar-icon", {
+          yPercent: 39,
+          duration: 1,
+          yoyo: true,
+          repeat: -1,
+          ease: "power1.inOut",
+        })
+        .to(oCharSecond, {
+          yPercent: -200,
+          ease: "back.in(2.2)",
+        })
+        .to(".oCharSecond-icon", {
+          yPercent: 20,
+          scale: 0.95,
+          ease: "back.out(2.2)",
+        })
+        .to(".oCharSecond-icon", {
+          yPercent: 29,
+          duration: 0.75,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+    });
 
-  //   gsap.set(splitHeading.words, {
-  //     clipPath: "inset(0% 0% 100% 0%)",
-  //     y: 20,
-  //   });
-
-  //   gsap.set(splitText.words, {
-  //     clipPath: "inset(0% 0% 100% 0%)",
-  //     y: 20,
-  //   });
-
-  //   const t1 = gsap.timeline({
-  //     defaults: { ease: "power3.out" },
-  //   });
-
-  //   t1.to(splitHeading.words, {
-  //     clipPath: "inset(0% 0% 0% 0)",
-  //     y: 0,
-  //     stagger: 0.15,
-  //     duration: 0.75,
-  //     ease: "Power4.out",
-  //   })
-  //     .to(
-  //       splitText.words,
-  //       {
-  //         clipPath: "inset(0% 0% 0% 0)",
-  //         y: 0,
-  //         stagger: 0.15,
-  //         duration: 0.75,
-  //         ease: "Power4.out",
-  //       },
-  //       "<"
-  //     )
-  //     .to(oCharHeading, {
-  //       yPercent: 100,
-  //       ease: "back.in(3)",
-  //     })
-  //     .to(iconElem, {
-  //       opacity: 1,
-  //     })
-  //     .to(iconElem, {
-  //       opacity: 0,
-  //     })
-  //     .to(
-  //       oCharHeading,
-  //       {
-  //         yPercent: 0,
-  //         ease: "back.out(3)",
-  //       },
-  //       "<"
-  //     )
-  //     .to(iconElem, {
-  //       yPercent: 35,
-  //       opacity: 1,
-  //       scale: 0.5,
-  //     })
-  //     .to(iconElem, {
-  //       y: -5,
-  //       duration: 1,
-  //       repeat: -1,
-  //       yoyo: true,
-  //       ease: "power1.inOut",
-  //     })
-  //     .to(
-  //       oCharText,
-  //       {
-  //         yPercent: 100,
-  //         ease: "back.in(3)",
-  //       },
-  //       "<"
-  //     )
-  //     .to(circleIconElem, {
-  //       yPercent: 30,
-  //       opacity: 1,
-  //     })
-  //     .to(circleIconElem, {
-  //       y: -7,
-  //       duration: 1,
-  //       repeat: -1,
-  //       yoyo: true,
-  //       ease: "power1.inOut",
-  //     });
-
-  //   gsap.to(heroSectionRef.current, {
-  //     scale: 0.85,
-  //     rotate: 3,
-  //     scrollTrigger: {
-  //       trigger: heroSectionRef.current,
-  //       start: "top top",
-  //       end: "+=120%",
-  //       scrub: true,
-  //       pin: true,
-  //       pinSpacing: false,
-  //     },
-  //   });
-  // });
+    gsap.to(heroSectionRef.current, {
+      scale: 0.85,
+      scrollTrigger: {
+        trigger: heroSectionRef.current,
+        scroller: "#smooth-wrapper",
+        start: "top top",
+        end: "+=120%",
+        scrub: true,
+        pin: true,
+        pinSpacing: false,
+      },
+    });
+  }, []);
 
   return (
     <>
-      <div className="hero-container">
+      <div className="hero-container" ref={heroSectionRef}>
         <div className="hero-content">
           <div className="heading">
-            <h1>Frontend</h1>
-            <h1>developer</h1>
+            <h1>
+              Fr
+              <span className="oChar">
+                o
+                <img className="oChar-icon" src={icon} alt="" />
+              </span>
+              ntend
+            </h1>
+            <h1>
+              devel
+              <span className="oCharSecond">
+                o
+                <img className="oCharSecond-icon" src={circleIcon} alt="" />
+              </span>
+              per
+            </h1>
           </div>
         </div>
 

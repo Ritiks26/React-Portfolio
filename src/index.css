@@ -31,7 +31,7 @@
 
 body {
   font-family: "almarena";
-  background-color: var(--bg-white);
+  background-color: var(--bg-black);
 
   &::selection {
     background-color: #dadada;
