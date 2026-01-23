@@ -48,13 +48,8 @@ export const projectDetail = [
     Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
   },
   {
-    website: "TRINITY - COLLEGE, COLLEGE WEBSITE",
-    projectLink: "https://trinity-sandy.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
-  },
-  {
-    website: "TRINITY - COLLEGE, COLLEGE WEBSITE",
-    projectLink: "https://trinity-sandy.vercel.app/",
+    website: "INKSPIRE STUDIO - DESIGNING AGENCY STUDIO",
+    isLaucnhed: "LAUNCHING SOON",
     Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
   },
 ];

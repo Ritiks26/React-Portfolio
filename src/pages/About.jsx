@@ -280,9 +280,8 @@ export function About() {
                   quizzes.
                 </p>
                 <p>
-                  {" "}
-                  A WordPress website using Elementor, custom CSS, and
-                  animations for a clean, modern look.
+                  High-end design agency Inkspire Studio × Awwwards style.
+                  <span> (LAUNCHING SOON)</span>
                 </p>
               </div>
             </div>
@@ -291,11 +290,11 @@ export function About() {
 
               <div className="projects-content">
                 <p>GSAP (GreenSock Animation Platform)</p>
+                <p>Responsive web design</p>
                 <p>React.JS</p>
                 <p>JavaScript</p>
                 <p> HTML</p>
                 <p>CSS</p>
-                <p> WordPress</p>
               </div>
             </div>
           </div>

@@ -46,6 +46,7 @@
 .project-card:nth-child(5) .projects-child {
   /* height: 50vh; */
   aspect-ratio: 16 / 10;
+  filter: blur(1rem);
 }
 
 .project-details {
