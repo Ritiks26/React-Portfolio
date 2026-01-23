@@ -1,31 +1,28 @@
 header {
   position: fixed;
-  bottom: 10px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-}
 
-.header-container {
-  background-color: rgba(0, 0, 0, 0.713);
-  backdrop-filter: blur(0.25rem);
   color: var(--font-white);
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  padding: 1.25rem 1.75rem;
-  border-radius: 1rem;
-  border: 2px solid gray;
+  padding: 0.75rem 0.75rem;
+  mix-blend-mode: difference;
 
   .nav ul {
     display: flex;
+    align-items: flex-end;
+    flex-direction: column;
     list-style: none;
-    gap: 1.25rem;
+    gap: 0.5rem;
 
     li {
-      text-shadow: 0rem -1rem 0rem #ffb700;
+      text-shadow: 0rem -0.95rem 0rem white;
       overflow: hidden;
       cursor: pointer;
       font-size: 1rem;

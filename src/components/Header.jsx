@@ -32,14 +32,15 @@ export function Header() {
   });
   return (
     <header>
-      <div className="header-container">
-        <div className="nav">
-          <ul>
-            {menus.map((link) => (
-              <li key={link.id}>{link.title}</li>
-            ))}
-          </ul>
-        </div>
+      <div className="logo">
+        <p>Ritik Singh</p>
+      </div>
+      <div className="nav">
+        <ul>
+          {menus.map((link) => (
+            <li key={link.id}>{link.title}</li>
+          ))}
+        </ul>
       </div>
     </header>
   );
