@@ -1,21 +1,24 @@
 .hero-container {
   background-color: var(--bg-white);
-  height: 100vh;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem 0;
   z-index: -1;
+
+  @media (width > 1028px) {
+    height: 100vh;
+  }
 }
 
 .hero-content {
   position: relative;
   font-family: "general sans";
-  height: 70%;
+  height: 65vh;
   width: 100%;
   display: flex;
   align-items: end;
