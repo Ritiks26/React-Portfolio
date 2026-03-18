@@ -35,7 +35,7 @@ export function WorkProject() {
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
                       height="18"
-                      fill="#dadada"
+                      fill="#000"
                       className="link-arrow-before"
                       viewBox="0 0 16 16"
                     >
@@ -49,7 +49,7 @@ export function WorkProject() {
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
                       height="18"
-                      fill="#dadada"
+                      fill="#000"
                       className="link-arrow-after"
                       viewBox="0 0 16 16"
                     >

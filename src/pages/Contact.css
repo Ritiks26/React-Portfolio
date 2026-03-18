@@ -1,7 +1,7 @@
 .contact-section {
   height: 90vh;
   width: 100%;
-  background-color: var(--bg-black);
+  background-color: var(--bg-white);
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -15,17 +15,18 @@
   ul li {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--font-white);
+    color: var(--font-black);
     text-transform: uppercase;
   }
 
   h1 {
     width: 100%;
     margin: 1rem 0;
-    font-size: clamp(1.5rem, 1.4rem + 1.2vw, 2.25rem);
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    /* font-size: clamp(1.5rem, 1.4rem + 1.2vw, 2.25rem); */
+    line-height: 1.75rem;
     font-weight: 500;
-    color: var(--font-primary);
+    color: var(--font-black);
 
     span {
       color: #ffb700;
@@ -49,8 +50,9 @@
 .contact-number,
 .email {
   p {
-    color: var(--font-primary);
-    font-size: clamp(1rem, 2.25vw, 1.75rem);
+    color: var(--font-black);
+    /* font-size: clamp(1rem, 2.25vw, 1.75rem); */
+    font-size: 1.25rem;
     font-weight: 600;
     margin: 0.5rem 0;
   }
@@ -70,14 +72,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid gray;
+  border: 1px solid black;
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .footer {
-  color: var(--font-primary);
+  color: var(--font-black);
   width: fit-content;
   padding: 0.25rem 0;
 
@@ -94,6 +96,6 @@
     text-align: center;
     font-size: clamp(4rem, 16vw, 15rem);
     font-weight: 900;
-    color: var(--font-white);
+    color: var(--font-primary);
   }
 }

@@ -2,14 +2,17 @@ export const menus = [
   {
     id: "/work",
     title: "Work",
+    navTo: "#work-section",
   },
   {
     id: "/about",
     title: "About",
+    navTo: "#about-section",
   },
   {
     id: "/contact",
     title: "Contact",
+    navTo: "#contact-section",
   },
 ];
 
@@ -33,6 +36,13 @@ export const projectDetail = [
     isFreeLance: "FREELANCE",
   },
   {
+    website: "INKSPIRE STUDIO - DESIGNING AGENCY STUDIO",
+    projectLink: "https://the-inkspire-studio.vercel.app/",
+    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
+
+    isFreeLance: "AWWWARDS TYPE",
+  },
+  {
     website: "RSNB, E - COMMERCE WEBSITE",
     projectLink: "https://react-project-three-olive-69.vercel.app/",
     Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
@@ -45,11 +55,6 @@ export const projectDetail = [
   {
     website: "TASK TRACKRR, TASK MANAGEMENT MOBILE APP",
     projectLink: "https://react-todo-six-black.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
-  },
-  {
-    website: "INKSPIRE STUDIO - DESIGNING AGENCY STUDIO",
-    isLaucnhed: "LAUNCHING SOON",
     Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
   },
 ];

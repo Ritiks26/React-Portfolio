@@ -228,7 +228,7 @@ export function About() {
 
   return (
     <>
-      <div className="about-section">
+      <div className="about-section" id="about-section">
         <div className="about-container">
           <ul>
             <li>ABOUT</li>
@@ -267,22 +267,23 @@ export function About() {
                   focused on structured content delivery, usability, and
                   cross-device compatibility. <span>(FREELANCE WORK)</span>
                 </p>
+
                 <p>
                   An online clothing store with a smooth add-to-cart system and
                   automatic bill generation.
                 </p>
+
                 <p>
                   Designed and built a mobile-friendly to-do list app, with a
                   clean UI and smooth task management.
                 </p>
+
                 <p>
                   Developed a dynamic quiz application with category-based
                   quizzes.
                 </p>
-                <p>
-                  High-end design agency Inkspire Studio × Awwwards style.
-                  <span> (LAUNCHING SOON)</span>
-                </p>
+
+                <p>High-end design agency Inkspire Studio × Awwwards style.</p>
               </div>
             </div>
             <div className="tech-skills">

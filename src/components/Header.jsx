@@ -38,7 +38,9 @@ export function Header() {
       <div className="nav">
         <ul>
           {menus.map((link) => (
-            <li key={link.id}>{link.title}</li>
+            <li key={link.id}>
+              <a href={link.navTo}>{link.title}</a>
+            </li>
           ))}
         </ul>
       </div>

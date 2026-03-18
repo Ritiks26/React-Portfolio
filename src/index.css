@@ -29,13 +29,21 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: var(--font-white);
+}
+
 body {
   font-family: "almarena";
-  /* background-color: var(--bg-black); */
-  background-color: rgb(6, 6, 12);
+  background-color: var(--font-primary);
 
   &::selection {
     background-color: #dadada;
     color: black;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }

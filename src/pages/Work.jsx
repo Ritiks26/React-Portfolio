@@ -38,7 +38,7 @@ export function Work() {
   }, []);
   return (
     <>
-      <div className="work-section" ref={workRef}>
+      <div className="work-section" id="work-section" ref={workRef}>
         <div className="work-container">
           <ul>
             <li>WORK</li>

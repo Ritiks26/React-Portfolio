@@ -3,7 +3,7 @@
 }
 
 .work-container {
-  background-color: var(--bg-black);
+  background-color: var(--bg-white);
   color: var(--font-white);
   margin: 0;
   padding: 1rem 1.25rem;
@@ -12,6 +12,7 @@
   ul li {
     font-size: 0.9rem;
     font-weight: 500;
+    color: var(--font-black);
   }
 
   .work-content {
@@ -23,13 +24,15 @@
       font-size: 0.9rem;
       font-weight: 500;
       text-transform: uppercase;
+      color: var(--bg-black);
     }
 
     p {
-      font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
-      line-height: 2.5rem;
+      /* font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem); */
+      font-size: 1.5rem;
+      line-height: 1.75rem;
       margin: 0.75rem 0;
-      color: var(--font-primary);
+      color: var(--font-black);
     }
   }
 }
