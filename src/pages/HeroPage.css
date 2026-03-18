@@ -72,13 +72,5 @@
     padding: 0.75rem 2rem;
     border-radius: inherit;
     cursor: pointer;
-
-    /* &::before {
-      content: "";
-      position: absolute;
-      border-radius: inherit;
-      border: 2px solid black;
-      inset: -0.25rem;
-    } */
   }
 }

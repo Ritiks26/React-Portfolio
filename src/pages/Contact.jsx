@@ -12,11 +12,7 @@ export function Contact() {
               <li>Contact</li>
             </ul>
             <h1>
-              Looking for a{" "}
-              <p style={{ display: "inline", color: "#ffb700" }}>
-                Frontend developer?
-              </p>{" "}
-              Get in touch.
+              Looking for a <p>Frontend developer?</p> Get in touch.
             </h1>
           </div>
 

@@ -175,7 +175,7 @@ export function About() {
     =============================== */
 
       const projectSplitText = SplitText.create(".projects-built p", {
-        type: "chars, words, lines",
+        type: "lines",
         linesClass: "split-line",
       });
 

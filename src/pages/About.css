@@ -17,20 +17,20 @@
     /* font-size: clamp(1.5rem, 1.4rem + 1.2vw, 2.25rem); */
     font-weight: 500;
     line-height: 1.75rem;
-    /* border: 1px solid;  */
     text-align: center;
+
+    @media (width < 640px) {
+      text-align: start;
+    }
     p {
-      /* width: 80%; */
       overflow: hidden;
       color: var(--font-black);
       span {
-        /* color: #ffb700;
         font-family: satoshi;
-        font-weight: 500; */
-
-        background: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
+        background-clip: text;
+        font-weight: 500;
       }
     }
   }
@@ -87,13 +87,15 @@
       margin: 0.5rem 0;
       width: 100%;
       line-height: 1.75rem;
-      color: var(--bg-black);
+      /* color: var(--font-black); */
 
       span {
-        color: #ffb700;
-        font-size: 1rem;
+        background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
+        background-clip: text;
+        color: transparent;
+        font-weight: 500;
         font-family: satoshi;
-        font-weight: 600;
+        font-size: 1.25rem;
       }
     }
   }

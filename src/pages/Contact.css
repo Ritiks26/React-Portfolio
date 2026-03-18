@@ -28,9 +28,11 @@
     font-weight: 500;
     color: var(--font-black);
 
-    span {
-      color: #ffb700;
-      display: inline-block;
+    p {
+      display: inline;
+      background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
+      background-clip: text;
+      color: transparent;
     }
   }
 }
