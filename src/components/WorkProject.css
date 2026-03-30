@@ -1,9 +1,18 @@
+:root {
+  /*STROKES*/
+  --card-1-stroke: #e67339;
+  --card-2-stroke: #a66363;
+  --card-3-stroke: #eb3828;
+  --card-4-stroke: #a6a09d;
+  --card-5-stroke: #99938a;
+  --card-6-stroke: #5f7c98;
+  --card-base-stroke: #e0e0e0;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: 1.5rem;
-  row-gap: 4rem;
-  margin-top: 1.5rem;
+  gap: 0.5rem;
 
   @media (width > 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -16,32 +25,43 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  img {
+  cursor: pointer;
+
+  .svg-stroke {
     position: absolute;
-    height: 140%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    height: 100%;
     width: 100%;
-    transform: scale(1.5);
+  }
+
+  img,
+  svg {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    bottom: 0;
     will-change: transform;
+    z-index: 5;
+  }
+
+  .project-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    z-index: 10;
+    h1 {
+      color: var(--font-black);
+      font-family: satoshi;
+      font-weight: 500;
+    }
   }
 }
 
-.project-card:nth-child(2) .projects-child {
-  aspect-ratio: 16 / 9;
-}
-
-.project-card:nth-child(3) .projects-child {
-  width: 90%;
-  aspect-ratio: 16 / 10;
-}
-
-.project-card:nth-child(4) .projects-child {
-  aspect-ratio: 5 / 4;
-}
-
-.project-card:nth-child(5) .projects-child {
-  aspect-ratio: 16 / 10;
+.project-card {
+  .svg-stroke-2 svg path {
+    stroke: var(--card-base-stroke);
+  }
 }
 
 .project-details {
@@ -73,5 +93,35 @@
     font-weight: 600;
     color: var(--font-black);
     cursor: pointer;
+  }
+}
+
+.project-card:nth-child(1) {
+  .svg-stroke-1 svg path {
+    stroke: var(--card-1-stroke);
+  }
+}
+
+.project-card:nth-child(2) {
+  .svg-stroke-1 svg path {
+    stroke: var(--card-2-stroke);
+  }
+}
+
+.project-card:nth-child(3) {
+  .svg-stroke-1 svg path {
+    stroke: var(--card-3-stroke);
+  }
+}
+
+.project-card:nth-child(4) {
+  .svg-stroke-1 svg path {
+    stroke: var(--card-4-stroke);
+  }
+}
+
+.project-card:nth-child(5) {
+  .svg-stroke-1 svg path {
+    stroke: var(--card-6-stroke);
   }
 }

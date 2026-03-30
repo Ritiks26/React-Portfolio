@@ -11,9 +11,6 @@ import "./App.css";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
-  const [workSummary, setWorkSummary] = useState(false);
-  const followballRef = useRef(null);
-  const followballbackRef = useRef(null);
   const smoothWrapperRef = useRef(null);
   const smoothContentRef = useRef(null);
 
@@ -33,12 +30,12 @@ function App() {
       smoothTouch: 0.1,
     });
 
-    parallax.effects(".parallax-image", {
-      speed: 0.75,
-      lag: 0.18,
-      start: "top bottom",
-      end: "bottom top",
-    });
+    // parallax.effects(".parallax-image", {
+    //   speed: 0.75,
+    //   lag: 0.18,
+    //   start: "top bottom",
+    //   end: "bottom top",
+    // });
   });
 
   return (

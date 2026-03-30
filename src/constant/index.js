@@ -1,3 +1,9 @@
+import laptopImage1 from "../assets/pics/mockups/laptop-1.jpg";
+import laptopImage2 from "../assets/pics/mockups/laptop-2.jpg";
+import laptopImage3 from "../assets/pics/mockups/laptop-3.jpg";
+import mobile1 from "../assets/pics/mockups/mobile-1.jpg";
+import mobile2 from "../assets/pics/mockups/mobile-2.jpg";
+
 export const menus = [
   {
     id: "/work",
@@ -31,30 +37,35 @@ export const projectDetail = [
   {
     website: "TRINITY - COLLEGE, COLLEGE WEBSITE",
     projectLink: "https://trinity-sandy.vercel.app/",
-    Image:
-      "https://www.chdartmaker.com/media/site/05c9f3ee90-1757062644/splinter-cover-1440x-q90.avif",
+    Image: laptopImage1,
     isFreeLance: "FREELANCE",
+    content: "College Platform",
   },
   {
     website: "INKSPIRE STUDIO - DESIGNING AGENCY STUDIO",
     projectLink: "https://the-inkspire-studio.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
-
+    Image: laptopImage2,
     isFreeLance: "AWWWARDS TYPE",
+    content: "Creative Studio",
   },
   {
     website: "RSNB, E - COMMERCE WEBSITE",
     projectLink: "https://react-project-three-olive-69.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
+    Image: laptopImage3,
+    content: "Online Platform",
   },
   {
     website: "INTELLIQUIZ, MOBILE QUIZ APP",
     projectLink: "https://intelli-quiz-pi.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
+    Image: mobile1,
+
+    content: "Quiz Application",
   },
   {
     website: "TASK TRACKRR, TASK MANAGEMENT MOBILE APP",
     projectLink: "https://react-todo-six-black.vercel.app/",
-    Image: "https://www.sebg.ch/_astro/cover.Cubfy4_n_1ehHw6.webp",
+    Image: mobile2,
+
+    content: "Task Manager",
   },
 ];
