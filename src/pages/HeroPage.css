@@ -1,6 +1,6 @@
 .hero-container {
   position: relative;
-  background-color: whitesmoke;
+  background-color: var(--bg-white);
   height: 100svh;
   width: 100%;
   margin: 0 auto;
@@ -8,35 +8,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: end;
-  padding: 2rem 1rem;
+  padding: 0.5rem;
   font-family: satoshi;
   z-index: -1;
-
-  @media (width > 1028px) {
-    height: 100vh;
-  }
 }
 
-.hero-heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  h1 {
-    padding: 0 1rem;
-    font-size: 2rem;
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 500;
-    background: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &:nth-child(2) {
-      font-family: satoshi;
-      font-size: 3rem;
-      background: none;
-      -webkit-background-clip: none;
-      -webkit-text-fill-color: var(--font-black);
+.hero-image {
+  display: flex;
+  gap: 0.25rem;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+
+  .left-hero-image,
+  .right-hero-image {
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
   }
 }

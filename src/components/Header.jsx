@@ -35,6 +35,7 @@ export function Header() {
       <div className="logo">
         <p>Ritik Singh</p>
       </div>
+      <div className="portfolio-of">frontend developer</div>
       <div className="nav">
         <ul>
           {menus.map((link) => (
