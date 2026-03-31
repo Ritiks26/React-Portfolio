@@ -26,7 +26,7 @@
       overflow: hidden;
       color: var(--font-black);
       span {
-        font-family: satoshi;
+        font-family: var(--font-main);
         color: transparent;
         background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
         background-clip: text;
@@ -37,7 +37,7 @@
 }
 
 .highlight-contents {
-  font-family: satoshi;
+  font-family: var(--font-main);
   margin: 2rem 0;
 
   ul {
@@ -94,7 +94,7 @@
         background-clip: text;
         color: transparent;
         font-weight: 500;
-        font-family: satoshi;
+        font-family: var(--font-main);
         font-size: 1.25rem;
       }
     }

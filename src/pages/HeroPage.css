@@ -9,12 +9,12 @@
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  font-family: satoshi;
+  font-family: var(--font-main);
   z-index: -1;
 
   .hero-text {
     text-transform: uppercase;
-    font-family: satoshi;
+    font-family: var(--font-main);
     font-weight: 500;
   }
 
@@ -78,7 +78,7 @@
   border-radius: 4rem;
 
   button {
-    font-family: satoshi;
+    font-family: var(--font-main);
     position: relative;
     font-size: 1.05rem;
     font-weight: 500;
