@@ -148,27 +148,27 @@ export function About() {
        HIGHLIGHTS SECTION
     =============================== */
 
-      const highlights = SplitText.create(".highlight-contents ul", {
-        type: "chars, words, lines",
-      });
+      // const highlights = SplitText.create(".highlight-contents ul", {
+      //   type: "chars, words, lines",
+      // });
 
-      gsap.set(highlights.lines, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        y: 20,
-      });
+      // gsap.set(highlights.lines, {
+      //   clipPath: "inset(0% 0% 100% 0%)",
+      //   y: 20,
+      // });
 
-      gsap.to(highlights.lines, {
-        clipPath: "inset(0% 0% 0% 0%)",
-        y: 0,
-        stagger: 0.08,
-        duration: 0.6,
-        ease: "Power4.out",
-        scrollTrigger: {
-          trigger: ".highlight-contents",
-          scroller: "#smooth-wrapper",
-          start: "top 75%",
-        },
-      });
+      // gsap.to(highlights.lines, {
+      //   clipPath: "inset(0% 0% 0% 0%)",
+      //   y: 0,
+      //   stagger: 0.08,
+      //   duration: 0.6,
+      //   ease: "Power4.out",
+      //   scrollTrigger: {
+      //     trigger: ".highlight-contents",
+      //     scroller: "#smooth-wrapper",
+      //     start: "top 75%",
+      //   },
+      // });
 
       /* ===============================
        WORKS SECTION
@@ -235,7 +235,7 @@ export function About() {
           </ul>
 
           <div className="about-content">
-            <p>
+            {/* <p>
               I am a Frontend Web Developer with hands-on experience building
               responsive and interactive web applications using{" "}
               <span> React.JS, JavaScript, GSAP, HTML, and CSS. </span> I have
@@ -246,6 +246,31 @@ export function About() {
               modern frontend technologies. I pay close attention to detail
               while building interfaces and enjoy collaborating on ideas that
               turn into meaningful digital experiences.
+            </p> */}
+            <p>
+              {" "}
+              I am a Frontend Web Developer with hands-on experience building
+              responsive and interactive web applications using{" "}
+              <span>React.JS, JavaScript, GSAP, HTML, and CSS.</span> I enjoy
+              creating modern user interfaces that are visually appealing,
+              responsive, and easy to use across different devices and screen
+              sizes. I have worked on real-world projects including e-commerce
+              platforms, quiz applications, and task management tools, where I
+              focused on building clean UI structures, smooth animations, and
+              scalable code. Through these projects, I developed a strong
+              understanding of component-based architecture and modern frontend
+              development practices.
+            </p>
+
+            <p>
+              {" "}
+              I enjoy solving UI challenges, improving user experience, and
+              continuously learning modern frontend technologies to stay updated
+              with industry trends. I pay close attention to detail while
+              designing layouts and interactions to ensure a polished and
+              consistent interface. I also enjoy collaborating on ideas and
+              turning concepts into meaningful digital experiences that provide
+              real value to users.
             </p>
           </div>
 
@@ -289,7 +314,7 @@ export function About() {
             <div className="tech-skills">
               <h3>Technical skills</h3>
 
-              <div className="projects-content">
+              <div className="skills-content">
                 <p>GSAP (GreenSock Animation Platform)</p>
                 <p>Responsive web design</p>
                 <p>React.JS</p>

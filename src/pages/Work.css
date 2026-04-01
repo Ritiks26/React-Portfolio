@@ -7,11 +7,11 @@
   color: var(--font-white);
   margin: 0;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid lightgray;
+  font-family: var(--font-main);
 
   ul li {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--font-black);
   }
 
@@ -20,17 +20,16 @@
     overflow: hidden;
 
     h3 {
-      letter-spacing: 0.05rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: uppercase;
       color: var(--bg-black);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     p {
       /* font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem); */
-      font-size: 1.5rem;
-      line-height: 1.75rem;
+      font-size: 1.15rem;
+      width: 85%;
       margin: 0.75rem 0;
       color: var(--font-black);
     }

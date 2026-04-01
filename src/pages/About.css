@@ -1,36 +1,46 @@
 .about-container {
   padding: 1.5rem 1.25rem;
-  /* border-top: 1px solid gray; */
-  border-bottom: 1px solid gray;
   z-index: 5;
   background-color: var(--bg-white);
+  font-family: var(--font-main);
 
   ul li {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--font-black);
+    font-family: "barlow condensed";
   }
 
   .about-content {
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 1rem;
     /* font-size: clamp(1.5rem, 1.4rem + 1.2vw, 2.25rem); */
     font-weight: 500;
-    line-height: 1.75rem;
-    text-align: center;
+    /* line-height: 1.75rem; */
+    /* width: 50%; */
 
-    @media (width < 640px) {
-      text-align: start;
-    }
     p {
+      text-align: center;
+      margin-bottom: 0.75rem;
+      width: 95%;
       overflow: hidden;
-      color: var(--font-black);
+      color: rgb(65, 65, 65);
+      @media (width < 640px) {
+        width: 100%;
+        text-align: start;
+      }
+      /* color: var(--font-black); */
       span {
-        font-family: var(--font-main);
+        /* font-family: var(--font-main);
         color: transparent;
         background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
-        background-clip: text;
-        font-weight: 500;
+        background-clip: text; */
+        color: var(--font-black);
+        font-weight: 600;
       }
     }
   }
@@ -42,19 +52,20 @@
 
   ul {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    text-align: left;
+    align-items: center;
     list-style: none;
 
-    @media (width > 700px) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (width < 700px) {
+      grid-template-columns: repeat(1, 1fr);
     }
 
     li {
-      font-size: 1rem;
+      font-size: 0.85rem;
       color: var(--font-black);
       font-weight: 600;
+      font-family: var(--font-main);
     }
   }
 }
@@ -73,29 +84,29 @@
   h3 {
     color: var(--bg-black);
     font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.05rem;
+    font-weight: 600;
     text-transform: uppercase;
   }
 
-  .projects-content {
+  .projects-content,
+  .skills-content {
     margin: 1rem 0;
 
     p {
       /* font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem); */
-      font-size: 1.5rem;
-      margin: 0.5rem 0;
+      font-size: 1rem;
+      margin: 0.25rem 0;
       width: 100%;
-      line-height: 1.75rem;
       /* color: var(--font-black); */
 
       span {
-        background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
+        /* background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
         background-clip: text;
-        color: transparent;
-        font-weight: 500;
+        color: transparent; */
+        font-weight: 600;
         font-family: var(--font-main);
-        font-size: 1.25rem;
+        color: var(--font-black);
+        font-size: 0.85rem;
       }
     }
   }

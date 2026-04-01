@@ -55,6 +55,7 @@
       color: var(--font-black);
       font-family: var(--font-main);
       font-weight: 500;
+      font-size: 1.15rem;
     }
   }
 }
@@ -73,14 +74,12 @@
     font-family: var(--font-main);
     width: 100%;
     margin: 0.75rem 0;
-    font-size: clamp(1rem, 2.25vw, 1.75rem);
-    line-height: clamp(1.25rem, 3vw, 2.2rem);
+    font-size: 1.15rem;
     font-weight: 500;
-    letter-spacing: 0.05rem;
     color: var(--font-black);
 
     strong {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 0rem;
       background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
       background-clip: text;
@@ -91,7 +90,7 @@
   a {
     width: fit-content;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--font-black);
     cursor: pointer;
