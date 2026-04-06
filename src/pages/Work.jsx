@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { useRef } from "react";
 import { WorkProject } from "../components/WorkProject";
 import "./Work.css";
+import { SectionHeading } from "../components/SectionHeading";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -40,9 +41,7 @@ export function Work() {
     <>
       <div className="work-section" id="work-section" ref={workRef}>
         <div className="work-container">
-          <ul>
-            <li>WORK</li>
-          </ul>
+          <SectionHeading heading={"work"} />
           <div className="work-content">
             <h3>
               Work I've <span>done</span>

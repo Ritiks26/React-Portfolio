@@ -1,121 +1,13 @@
-import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SectionHeading } from "../components/SectionHeading";
 import "./About.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function About() {
-  // useGSAP(() => {
-  //   /* ===============================
-  //      ABOUT SECTION
-  //   =============================== */
-  //   const splitPara = SplitText.create(".about-content p", {
-  //     type: "lines",
-  //     linesClass: "split-line",
-  //   });
-
-  //   gsap.set(splitPara.lines, {
-  //     clipPath: "inset(0% 0% 100% 0)",
-  //     y: 20,
-  //   });
-
-  //   gsap.to(splitPara.lines, {
-  //     clipPath: "inset(0% 0% 0% 0)",
-  //     y: 0,
-  //     stagger: 0.08,
-  //     duration: 0.6,
-  //     ease: "Power4.out",
-  //     scrollTrigger: {
-  //       trigger: ".about-section",
-  //       scroller: "#smooth-wrapper",
-  //       start: "top 50%",
-  //     },
-  //   });
-
-  //   /* ===============================
-  //      HIGHLIGHTS SECTION
-  //   =============================== */
-
-  //   const highlights = SplitText.create(".highlight-contents ul", {
-  //     type: "chars, words, lines",
-  //   });
-
-  //   gsap.set(highlights.lines, {
-  //     clipPath: "inset(0% 0% 100% 0%)",
-  //     y: 20,
-  //   });
-
-  //   gsap.to(highlights.lines, {
-  //     clipPath: "inset(0% 0% 0% 0%)",
-  //     y: 0,
-  //     stagger: 0.08,
-  //     duration: 0.6,
-  //     ease: "Power4.out",
-  //     scrollTrigger: {
-  //       trigger: ".highlight-contents",
-  //       scroller: "#smooth-wrapper",
-  //       start: "top 50%",
-  //     },
-  //   });
-
-  //   /* ===============================
-  //      WORKS SECTION
-  //   =============================== */
-
-  //   const projectSplitText = SplitText.create(".projects-built p", {
-  //     type: "chars, words, lines",
-  //     linesClass: "split-line",
-  //   });
-
-  //   gsap.set(projectSplitText.lines, {
-  //     clipPath: "inset(0% 0% 100% 0)",
-  //     y: 20,
-  //   });
-
-  //   gsap.to(projectSplitText.lines, {
-  //     clipPath: "inset(0% 0% 0% 0)",
-  //     y: 0,
-  //     stagger: 0.08,
-  //     duration: 0.6,
-  //     ease: "Power4.out",
-  //     scrollTrigger: {
-  //       trigger: ".projects-built",
-  //       scroller: "#smooth-wrapper",
-  //       start: "top 50%",
-  //     },
-  //   });
-
-  //   /* ===============================
-  //      SKILLS SECTION
-  //   =============================== */
-
-  //   const techSkillsSplit = SplitText.create(".tech-skills p", {
-  //     type: "chars, words, lines",
-  //     linesClass: "split-line",
-  //   });
-
-  //   gsap.set(techSkillsSplit.lines, {
-  //     clipPath: "inset(0% 0% 100% 0)",
-  //     y: 20,
-  //   });
-
-  //   gsap.to(techSkillsSplit.lines, {
-  //     clipPath: "inset(0% 0% 0% 0)",
-  //     y: 0,
-  //     stagger: 0.08,
-  //     duration: 0.6,
-  //     ease: "Power4.out",
-  //     scrollTrigger: {
-  //       trigger: ".tech-skills",
-  //       scroller: "#smooth-wrapper",
-  //       start: "top 80%",
-  //     },
-  //   });
-  // }, []);
-
   useGSAP(() => {
     document.fonts.ready.then(() => {
       /* ===============================
@@ -230,23 +122,8 @@ export function About() {
     <>
       <div className="about-section" id="about-section">
         <div className="about-container">
-          <ul>
-            <li>ABOUT</li>
-          </ul>
-
+          <SectionHeading heading={"ABOUT"} />
           <div className="about-content">
-            {/* <p>
-              I am a Frontend Web Developer with hands-on experience building
-              responsive and interactive web applications using{" "}
-              <span> React.JS, JavaScript, GSAP, HTML, and CSS. </span> I have
-              worked on real-world projects including e-commerce platforms, quiz
-              applications, and task management tools, focusing on clean UI,
-              smooth animations, and scalable code. I enjoy solving UI
-              challenges, improving user experience, and continuously learning
-              modern frontend technologies. I pay close attention to detail
-              while building interfaces and enjoy collaborating on ideas that
-              turn into meaningful digital experiences.
-            </p> */}
             <p>
               {" "}
               I am a Frontend Web Developer with hands-on experience building

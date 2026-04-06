@@ -9,12 +9,6 @@
   padding: 1rem 1.25rem;
   font-family: var(--font-main);
 
-  ul li {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--font-black);
-  }
-
   .work-content {
     margin-top: 2rem;
     overflow: hidden;
@@ -27,7 +21,6 @@
     }
 
     p {
-      /* font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem); */
       font-size: 1.15rem;
       width: 85%;
       margin: 0.75rem 0;

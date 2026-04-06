@@ -12,13 +12,6 @@
   margin: 0;
   padding: 1.5rem 1.25rem;
 
-  ul li {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--font-black);
-    text-transform: uppercase;
-  }
-
   h1 {
     width: 100%;
     margin: 1rem 0;

@@ -1,5 +1,4 @@
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import { SectionHeading } from "../components/SectionHeading";
 import "./Contact.css";
 
 export function Contact() {
@@ -8,9 +7,7 @@ export function Contact() {
       <div className="contact-section" id="contact-section">
         <div>
           <div className="contact-container">
-            <ul>
-              <li>Contact</li>
-            </ul>
+            <SectionHeading heading={"contact"} />
             <h1>
               Looking for a <p>Frontend developer?</p> Get in touch.
             </h1>
