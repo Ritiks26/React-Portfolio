@@ -6,19 +6,12 @@ import mobile2 from "../assets/pics/mockups/mobile-2.jpg";
 
 export const menus = [
   {
-    id: "/work",
-    title: "Work",
-    navTo: "#work-section",
-  },
-  {
-    id: "/about",
-    title: "About",
-    navTo: "#about-section",
+    id: "/playground",
+    title: "Playground",
   },
   {
     id: "/contact",
     title: "Contact",
-    navTo: "#contact-section",
   },
 ];
 

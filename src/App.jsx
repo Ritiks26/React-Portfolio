@@ -1,35 +1,41 @@
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Lenis from "lenis";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { useEffect, useRef, useState } from "react";
 import { Header } from "../src/components/Header.jsx";
 import { HomePage } from "./pages/HomePage";
+import { Playground } from "./pages/Playground/Playground.jsx";
 import "./App.css";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const smoothWrapperRef = useRef(null);
-  const smoothContentRef = useRef(null);
-
-  useGSAP(() => {
-    const parallax = ScrollSmoother.create({
-      wrapper: smoothWrapperRef.current,
-      content: smoothContentRef.current,
-      smooth: 1.7,
-      smoothTouch: 0.1,
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
     });
-  });
 
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
   return (
     <>
-      <div id="smooth-wrapper" ref={smoothWrapperRef}>
-        <Header />
-        <div id="smooth-content" ref={smoothContentRef}>
-          <HomePage />
-        </div>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/playground" element={<Playground />} />
+      </Routes>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
@@ -33,15 +34,17 @@ export function Header() {
   return (
     <header>
       <div className="logo">
-        <p>Ritik Singh</p>
+        <Link to={"/"}>
+          <p>Ritik Singh</p>
+        </Link>
       </div>
       <div className="portfolio-of">frontend developer</div>
       <div className="nav">
         <ul>
           {menus.map((link) => (
-            <li key={link.id}>
-              <a href={link.navTo}>{link.title}</a>
-            </li>
+            <Link to={link.id}>
+              <li key={link.id}>{link.title}</li>
+            </Link>
           ))}
         </ul>
       </div>

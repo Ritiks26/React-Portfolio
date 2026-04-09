@@ -30,7 +30,6 @@ export function Work() {
         ease: "Power4.out",
         scrollTrigger: {
           trigger: workRef.current,
-          scroller: "#smooth-wrapper",
           start: "top 75%",
           end: "+=120%",
         },

@@ -31,36 +31,9 @@ export function About() {
         ease: "Power4.out",
         scrollTrigger: {
           trigger: ".about-section",
-          scroller: "#smooth-wrapper",
           start: "top 75%",
         },
       });
-
-      /* ===============================
-       HIGHLIGHTS SECTION
-    =============================== */
-
-      // const highlights = SplitText.create(".highlight-contents ul", {
-      //   type: "chars, words, lines",
-      // });
-
-      // gsap.set(highlights.lines, {
-      //   clipPath: "inset(0% 0% 100% 0%)",
-      //   y: 20,
-      // });
-
-      // gsap.to(highlights.lines, {
-      //   clipPath: "inset(0% 0% 0% 0%)",
-      //   y: 0,
-      //   stagger: 0.08,
-      //   duration: 0.6,
-      //   ease: "Power4.out",
-      //   scrollTrigger: {
-      //     trigger: ".highlight-contents",
-      //     scroller: "#smooth-wrapper",
-      //     start: "top 75%",
-      //   },
-      // });
 
       /* ===============================
        WORKS SECTION
@@ -84,7 +57,6 @@ export function About() {
         ease: "Power4.out",
         scrollTrigger: {
           trigger: ".projects-built",
-          scroller: "#smooth-wrapper",
           start: "top 75%",
         },
       });
@@ -111,7 +83,6 @@ export function About() {
         ease: "Power4.out",
         scrollTrigger: {
           trigger: ".tech-skills",
-          scroller: "#smooth-wrapper",
           start: "top 75%",
         },
       });
