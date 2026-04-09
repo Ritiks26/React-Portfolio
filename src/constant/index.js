@@ -10,8 +10,8 @@ export const menus = [
     title: "Playground",
   },
   {
-    id: "/contact",
-    title: "Contact",
+    id: "/colophon",
+    title: "Colophon",
   },
 ];
 

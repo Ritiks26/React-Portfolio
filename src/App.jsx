@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Header } from "../src/components/Header.jsx";
 import { HomePage } from "./pages/HomePage";
 import { Playground } from "./pages/Playground/Playground.jsx";
+import { Colophon } from "./pages/Colophon/colophon.jsx";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/playground" element={<Playground />} />
+        <Route path="/colophon" element={<Colophon />} />
       </Routes>
     </>
   );

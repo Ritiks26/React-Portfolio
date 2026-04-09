@@ -1,0 +1,101 @@
+.colophon-container {
+  position: relative;
+  background-color: var(--bg-white);
+}
+
+.colophon-child {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  font-family: "barlow condensed";
+  overflow: hidden;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid lightgray;
+
+  p {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    width: 40%;
+    text-transform: uppercase;
+    color: var(--font-black);
+    @media (width < 640px) {
+      width: 100%;
+      text-align: start;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 0.65;
+    color: var(--font-black);
+  }
+}
+
+.technology-section,
+.design-section,
+.inspiration-section {
+  font-family: var(--font-main);
+  margin-top: 2rem;
+  padding: 0 1.25rem;
+}
+
+.technology-content,
+.design-content,
+.inspiration-content {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  p {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    width: 95%;
+    overflow: hidden;
+    color: rgb(65, 65, 65);
+    font-weight: 500;
+    @media (width < 640px) {
+      width: 100%;
+      text-align: start;
+    }
+    span {
+      color: var(--font-black);
+      font-weight: 600;
+    }
+  }
+}
+
+.inspired-devs {
+  margin-top: 1.5rem;
+  width: 100%;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    text-align: center;
+
+    @media (width < 640px) {
+      flex-direction: column;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--font-black);
+      cursor: pointer;
+
+      svg {
+        height: 18px;
+      }
+    }
+  }
+}
