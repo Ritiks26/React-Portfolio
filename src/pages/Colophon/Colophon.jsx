@@ -12,8 +12,14 @@ export function Colophon() {
       <div className="colophon-child">
         <p></p>
         <p>
-          This website is built by Ritik Singh as a space to showcase projects,
-          experiments, and creative web development work.
+          This website is built{" "}
+          <img
+            className="in-between-image"
+            src="https://the-inkspire-studio.vercel.app/assets/hero-pic-2-Be16eK_c.jpeg"
+            alt=""
+          />{" "}
+          by Ritik Singh as a space to showcase projects, experiments, and
+          creative web development work.
         </p>{" "}
         <h1>Colophon</h1>
       </div>
@@ -61,7 +67,8 @@ export function Colophon() {
 
           <p>
             For typography, the site uses <span>Satoshi</span> as the primary
-            font for body text and <span>Barlow Condensed</span> for headings
+            font for body text and{" "}
+            <span className="barlow-font">Barlow Condensed</span> for headings
             and navigation. This combination helps create a balance between
             readability and strong visual hierarchy while giving the interface a
             modern and distinctive feel.

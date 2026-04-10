@@ -8,7 +8,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   font-family: "barlow condensed";
   overflow: hidden;
@@ -17,13 +17,23 @@
 
   p {
     font-family: var(--font-main);
-    font-size: 0.85rem;
-    width: 40%;
+    font-size: 1rem;
+    width: 50%;
+    font-weight: 600;
     text-transform: uppercase;
-    color: var(--font-black);
+    color: rgb(65, 65, 65);
+    text-align: center;
     @media (width < 640px) {
       width: 100%;
       text-align: start;
+    }
+
+    .in-between-image {
+      vertical-align: middle;
+      height: 35px;
+      width: 75px;
+      border-radius: 2rem;
+      object-fit: cover;
     }
   }
 
