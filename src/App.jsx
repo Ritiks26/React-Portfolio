@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Header } from "../src/components/Header.jsx";
 import { HomePage } from "./pages/HomePage";
 import { Playground } from "./pages/Playground/Playground.jsx";
-import { Colophon } from "./pages/Colophon/colophon.jsx";
+import { Colophon } from "./pages/Colophon/Colophon.jsx";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
