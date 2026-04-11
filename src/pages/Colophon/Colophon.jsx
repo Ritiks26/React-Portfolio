@@ -10,18 +10,13 @@ export function Colophon() {
   return (
     <section className="colophon-container">
       <div className="colophon-child">
-        <p></p>
+        <h1>colophon</h1>
+
         <p>
-          This website is built{" "}
-          <img
-            className="in-between-image"
-            src="https://the-inkspire-studio.vercel.app/assets/hero-pic-2-Be16eK_c.jpeg"
-            alt=""
-          />{" "}
-          by Ritik Singh as a space to showcase projects, experiments, and
-          creative web development work.
-        </p>{" "}
-        <h1>Colophon</h1>
+          This website is built by <span>Ritik Singh</span> as a space to
+          showcase projects, experiments, and{" "}
+          <span>creative web development</span> work.
+        </p>
       </div>
 
       <div className="technology-section">

@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: var(--font-main);
 }
 
 .contact-container {
@@ -21,10 +22,12 @@
     color: var(--font-black);
 
     p {
+      font-size: 1.5rem;
       display: inline;
       background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
       background-clip: text;
       color: transparent;
+      font-weight: 500;
     }
   }
 }
@@ -45,7 +48,6 @@
 .email {
   p {
     color: var(--font-black);
-    /* font-size: clamp(1rem, 2.25vw, 1.75rem); */
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0.5rem 0;
@@ -53,7 +55,7 @@
 }
 
 .socials {
-  border-bottom: 1px solid rgb(49, 49, 49);
+  border-bottom: 1px solid lightgray;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -84,12 +86,14 @@
   .name {
     text-align: right;
     font-size: clamp(1rem, 2.25vw, 1.75rem);
+    line-height: 1;
   }
 
   .portfolio {
     text-align: center;
     font-size: clamp(4rem, 16vw, 15rem);
-    font-weight: 900;
+    font-weight: 500;
     color: var(--font-primary);
+    line-height: 1;
   }
 }
