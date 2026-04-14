@@ -9,6 +9,20 @@
   grid-template-columns: repeat(30, 1fr);
 }
 
+/* tablet */
+@media (max-width: 1024px) {
+  .page-navigation {
+    grid-template-columns: repeat(20, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  .page-navigation {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
 .page-nav-child {
   height: 100%;
   background-color: #dadada;

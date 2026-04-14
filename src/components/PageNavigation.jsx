@@ -8,6 +8,14 @@ export function PageNavigation() {
   const location = useLocation();
   const pageNavRef = useRef();
 
+  const gridSize = () => {
+    const width = window.innerWidth;
+
+    if (width < 640) return 80;
+    if (width < 1024) return 160;
+    return 300;
+  };
+
   useGSAP(
     () => {
       const tl = gsap.timeline();
@@ -70,7 +78,7 @@ export function PageNavigation() {
 
   return (
     <section className="page-navigation" ref={pageNavRef}>
-      {Array.from({ length: 300 }).map((_, i) => (
+      {Array.from({ length: gridSize() }).map((_, i) => (
         <div key={i} className="page-nav-child"></div>
       ))}
     </section>
