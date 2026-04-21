@@ -159,16 +159,61 @@ export function About() {
                 <p>High-end design agency Inkspire Studio × Awwwards style.</p>
               </div>
             </div>
-            <div className="tech-skills">
+            <div className="techstack-container">
               <h3>Technical skills</h3>
-
-              <div className="skills-content">
-                <p>GSAP (GreenSock Animation Platform)</p>
-                <p>Responsive web design</p>
-                <p>React.JS</p>
-                <p>JavaScript</p>
-                <p> HTML</p>
-                <p>CSS</p>
+              <div className="skill-set-grid">
+                <div className="skill-set">
+                  <div className="skill-heading">
+                    <h1>
+                      <span>Frontend</span> Stack
+                    </h1>
+                    <div className="stacks">
+                      <p>Responsive Web Design</p>
+                      <p>JavaScript</p>
+                      <p>React.Js</p>
+                      <p>GSAP</p>
+                      <p>HTML</p>
+                      <p>CSS</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="skill-set">
+                  <div className="skill-heading">
+                    <h1>
+                      <span>api</span> & <span>data</span> handling
+                    </h1>
+                    <div className="stacks">
+                      <p>Rest API Integration</p>
+                      <p>Error Handling</p>
+                      <p>Async/Await</p>
+                      <p>Axios</p>
+                    </div>
+                  </div>
+                </div>{" "}
+                <div className="skill-set">
+                  <div className="skill-heading">
+                    <h1>
+                      <span>ai</span> t<span>oo</span>ls
+                    </h1>
+                    <div className="stacks">
+                      <p>Vercel v0</p>
+                      <p>ChatGPT</p>
+                      <p>Lovable</p>
+                      <p>Claude</p>
+                    </div>
+                  </div>
+                </div>{" "}
+                <div className="skill-set">
+                  <div className="skill-heading">
+                    <h1>
+                      t<span>oo</span>ls
+                    </h1>
+                    <div className="stacks">
+                      <p>Postman</p>
+                      <p>Github</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
