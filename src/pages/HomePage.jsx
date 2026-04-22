@@ -1,5 +1,6 @@
 import { HeroPage } from "./HeroPage";
 import { About } from "./About";
+import { SkillSet } from "../components/SkillSet";
 import { Work } from "./Work";
 import { Contact } from "./Contact";
 import "./HomePage.css";
@@ -9,6 +10,7 @@ export function HomePage() {
     <>
       <HeroPage />
       <About />
+      <SkillSet />
       <Work />
       <Contact />
     </>

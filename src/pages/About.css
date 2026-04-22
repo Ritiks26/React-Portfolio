@@ -92,59 +92,6 @@
   }
 }
 
-.techstack-container {
-  width: 100%;
-}
-
-.skill-set-grid {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  width: 100%;
-  gap: 0.5rem;
-
-  @media (width < 640px) {
-    flex-direction: column;
-  }
-}
-
-.skill-set {
-  position: relative;
-  height: 100%;
-  border-radius: 1rem;
-}
-
-.skill-heading {
-  overflow: hidden;
-  h1 {
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    color: var(--font-primary);
-    text-transform: uppercase;
-
-    span {
-      font-size: 1.5rem;
-      background-image: linear-gradient(90deg, #ff7a18, #ff4d6d, #a855f7);
-      background-clip: text;
-      color: transparent;
-      font-family: telma;
-    }
-  }
-}
-
-.stacks {
-  margin-top: 0.5rem;
-  p {
-    color: var(--font-black);
-    font-family: satoshi;
-    font-weight: 500;
-    margin: 0.25rem 0;
-  }
-}
-
 .split-line {
   display: block;
   overflow: hidden;

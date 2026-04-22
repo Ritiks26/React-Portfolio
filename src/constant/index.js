@@ -1,6 +1,7 @@
 import laptopImage1 from "../assets/pics/mockups/laptop-1.jpg";
 import laptopImage2 from "../assets/pics/mockups/laptop-2.jpg";
 import laptopImage3 from "../assets/pics/mockups/laptop-3.jpg";
+import laptopImage4 from "../assets/pics/mockups/laptop-4.png";
 import mobile1 from "../assets/pics/mockups/mobile-1.jpg";
 import mobile2 from "../assets/pics/mockups/mobile-2.jpg";
 
@@ -33,6 +34,13 @@ export const projectDetail = [
     Image: laptopImage1,
     isFreeLance: "FREELANCE",
     content: "College Platform",
+  },
+  {
+    website: "TRUEKIND - SHOES, E-COMMERCE WEBSITE",
+    projectLink: "https://kindtrue.vercel.app/",
+    Image: laptopImage4,
+    isFreeLance: "FREELANCE",
+    content: "Online Platform",
   },
   {
     website: "INKSPIRE STUDIO - DESIGNING AGENCY STUDIO",
