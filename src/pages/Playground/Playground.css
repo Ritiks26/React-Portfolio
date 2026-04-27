@@ -1,24 +1,92 @@
 .playground-container {
-  height: 100vh;
+  position: relative;
   width: 100%;
+  height: 100svh;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-white);
   font-family: "barlow condensed";
+
+  h1 {
+    /* position: fixed; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    color: var(--font-white);
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: "telma";
+    mix-blend-mode: difference;
+  }
+
+  p {
+    font-family: "barlow condensed";
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  /* font-size: clamp(3rem, 2.2958rem + 3.0047vw, 5rem); */
 }
 
-h1 {
-  color: var(--font-black);
-  text-transform: uppercase;
-  font-size: clamp(3rem, 2.2958rem + 3.0047vw, 5rem);
+.playground-projects {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-p {
-  margin: 0;
-  padding: 0;
+.playground-project-wrapper {
+  margin-top: 1rem;
+  padding: 0 1rem;
+  height: 50%;
+  width: 100%;
 
-  font-weight: 500;
-  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playground-project {
+  /* height: 65%;
+  width: 25%; */
+
+  width: 25%;
+  aspect-ratio: 16 / 9;
+
+  background-image: url("../../assets/pics/mockups/laptop-4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.playground-projects
+  .playground-project-wrapper:nth-child(1)
+  .playground-project:nth-child(2) {
+  /* height: 100%;
+  width: 35%; */
+
+  width: 35%;
+  aspect-ratio: 16 / 9;
+}
+
+.playground-projects
+  .playground-project-wrapper:nth-child(2)
+  .playground-project:nth-child(1) {
+  /* height: 85%;
+  width: 35%; */
+
+  width: 35%;
+  aspect-ratio: 4 / 2;
+}
+
+.playground-projects
+  .playground-project-wrapper:nth-child(2)
+  .playground-project:nth-child(2) {
+  /* height: 50%;
+  width: 15%; */
+
+  width: 15%;
+  aspect-ratio: 2 / 2;
 }

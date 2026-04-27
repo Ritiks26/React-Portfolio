@@ -16,7 +16,7 @@
   row-gap: 1.5rem;
 
   @media (width > 640px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -44,6 +44,10 @@
     object-fit: cover;
     will-change: transform;
     z-index: 5;
+  }
+
+  svg {
+    rotate: 180deg;
   }
 
   .project-content {

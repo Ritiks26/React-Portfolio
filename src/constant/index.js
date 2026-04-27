@@ -39,7 +39,6 @@ export const projectDetail = [
     website: "TRUEKIND - SHOES, E-COMMERCE WEBSITE",
     projectLink: "https://kindtrue.vercel.app/",
     Image: laptopImage4,
-    isFreeLance: "FREELANCE",
     content: "Online Platform",
   },
   {
