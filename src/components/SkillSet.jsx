@@ -1,9 +1,71 @@
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import { SectionHeading } from "./SectionHeading";
 import "./SkillSet.css";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export function SkillSet() {
+  const skillContainerRef = useRef();
+  useGSAP(() => {
+    const skillSet = gsap.utils.toArray(".skills-section");
+
+    skillSet.forEach((section) => {
+      const h1Elem = section.querySelectorAll("h1");
+      const pElem = section.querySelectorAll("p");
+      const iconWrapper = section.querySelectorAll(".icon-wrapper");
+
+      document.fonts.ready.then(() => {
+        const splitHeading = SplitText.create(h1Elem, { type: "lines" });
+
+        const splitPara = SplitText.create(pElem, { type: "lines" });
+
+        gsap.set(splitHeading.lines, {
+          clipPath: "inset(0% 0% 100% 0%)",
+          yPercent: 100,
+        });
+
+        gsap.set(splitPara.lines, {
+          clipPath: "inset(0% 0% 100% 0%)",
+          yPercent: 100,
+        });
+
+        gsap.set(iconWrapper, {
+          opacity: 0,
+          filter: "blur(0.75rem)",
+        });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: skillContainerRef.current,
+            start: "top 50%",
+          },
+        });
+
+        tl.to(splitHeading.lines, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          yPercent: 0,
+          ease: "expo",
+        })
+          .to(splitPara.lines, {
+            clipPath: "inset(0% 0% 0% 0%)",
+            yPercent: 0,
+            ease: "expo",
+          })
+          .to(iconWrapper, {
+            opacity: 1,
+            filter: "blur(0rem)",
+            ease: "expo",
+          });
+      });
+    });
+  });
+
   return (
-    <section className="skills-container">
+    <section className="skills-container" ref={skillContainerRef}>
       <SectionHeading heading={"technical skills"} />
 
       <div className="skills-section">
@@ -143,7 +205,7 @@ export function SkillSet() {
           <div className="icon-wrapper">
             <svg
               fill="currentColor"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"
@@ -151,7 +213,7 @@ export function SkillSet() {
             >
               <title>V0</title>
               <path
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M14.252 8.25h5.624c.088 0 .176.006.26.018l-5.87 5.87a1.889 1.889 0 01-.019-.265V8.25h-2.25v5.623a4.124 4.124 0 004.125 4.125h5.624v-2.25h-5.624c-.09 0-.179-.006-.265-.018l5.874-5.875a1.9 1.9 0 01.02.27v5.623H24v-5.624A4.124 4.124 0 0019.876 6h-5.624v2.25zM0 7.5v.006l7.686 9.788c.924 1.176 2.813.523 2.813-.973V7.5H8.25v6.87L2.856 7.5H0z"
               ></path>
             </svg>
@@ -177,10 +239,10 @@ export function SkillSet() {
             >
               <title>Lovable</title>
               <path
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M7.082 0c3.91 0 7.081 3.179 7.081 7.1v2.7h2.357c3.91 0 7.082 3.178 7.082 7.1 0 3.923-3.17 7.1-7.082 7.1H0V7.1C0 3.18 3.17 0 7.082 0z"
                 fill="url(#lobe-icons-lovable-_R_0_)"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
               <defs>
                 <radialGradient
@@ -191,11 +253,11 @@ export function SkillSet() {
                   id="lobe-icons-lovable-_R_0_"
                   r="1"
                 >
-                  <stop offset=".25" stop-color="#FE7B02"></stop>
-                  <stop offset=".433" stop-color="#FE4230"></stop>
-                  <stop offset=".548" stop-color="#FE529A"></stop>
-                  <stop offset=".654" stop-color="#DD67EE"></stop>
-                  <stop offset=".95" stop-color="#4B73FF"></stop>
+                  <stop offset=".25" stopColor="#FE7B02"></stop>
+                  <stop offset=".433" stopColor="#FE4230"></stop>
+                  <stop offset=".548" stopColor="#FE529A"></stop>
+                  <stop offset=".654" stopColor="#DD67EE"></stop>
+                  <stop offset=".95" stopColor="#4B73FF"></stop>
                 </radialGradient>
               </defs>
             </svg>
@@ -203,11 +265,11 @@ export function SkillSet() {
           <div className="icon-wrapper">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="geometricPrecision"
-              text-rendering="geometricPrecision"
-              image-rendering="optimizeQuality"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              shapeRendering="geometricPrecision"
+              textRendering="geometricPrecision"
+              imageRendering="optimizeQuality"
+              fillRule="evenodd"
+              clipRule="evenodd"
               viewBox="0 0 512 509.64"
             >
               <path
@@ -216,7 +278,7 @@ export function SkillSet() {
               />
               <path
                 fill="#FCF2EE"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 d="M142.27 316.619l73.655-41.326 1.238-3.589-1.238-1.996-3.589-.001-12.31-.759-42.084-1.138-36.498-1.516-35.361-1.896-8.897-1.895-8.34-10.995.859-5.484 7.482-5.03 10.717.935 23.683 1.617 35.537 2.452 25.782 1.517 38.193 3.968h6.064l.86-2.451-2.073-1.517-1.618-1.517-36.776-24.922-39.81-26.338-20.852-15.166-11.273-7.683-5.687-7.204-2.451-15.721 10.237-11.273 13.75.935 3.513.936 13.928 10.716 29.749 23.027 38.848 28.612 5.687 4.727 2.275-1.617.278-1.138-2.553-4.271-21.13-38.193-22.546-38.848-10.035-16.101-2.654-9.655c-.935-3.968-1.617-7.304-1.617-11.374l11.652-15.823 6.445-2.073 15.545 2.073 6.547 5.687 9.655 22.092 15.646 34.78 24.265 47.291 7.103 14.028 3.791 12.992 1.416 3.968 2.449-.001v-2.275l1.997-26.641 3.69-32.707 3.589-42.084 1.239-11.854 5.863-14.206 11.652-7.683 9.099 4.348 7.482 10.716-1.036 6.926-4.449 28.915-8.72 45.294-5.687 30.331h3.313l3.792-3.791 15.342-20.372 25.782-32.227 11.374-12.789 13.27-14.129 8.517-6.724 16.1-.001 11.854 17.617-5.307 18.199-16.581 21.029-13.75 17.819-19.716 26.54-12.309 21.231 1.138 1.694 2.932-.278 44.536-9.479 24.062-4.347 28.714-4.928 12.992 6.066 1.416 6.167-5.106 12.613-30.71 7.583-36.018 7.204-53.636 12.689-.657.48.758.935 24.164 2.275 10.337.556h25.301l47.114 3.514 12.309 8.139 7.381 9.959-1.238 7.583-18.957 9.655-25.579-6.066-59.702-14.205-20.474-5.106-2.83-.001v1.694l17.061 16.682 31.266 28.233 39.152 36.397 1.997 8.999-5.03 7.102-5.307-.758-34.401-25.883-13.27-11.651-30.053-25.302-1.996-.001v2.654l6.926 10.136 36.574 54.975 1.895 16.859-2.653 5.485-9.479 3.311-10.414-1.895-21.408-30.054-22.092-33.844-17.819-30.331-2.173 1.238-10.515 113.261-4.929 5.788-11.374 4.348-9.478-7.204-5.03-11.652 5.03-23.027 6.066-30.052 4.928-23.886 4.449-29.674 2.654-9.858-.177-.657-2.173.278-22.37 30.71-34.021 45.977-26.919 28.815-6.445 2.553-11.173-5.789 1.037-10.337 6.243-9.2 37.257-47.392 22.47-29.371 14.508-16.961-.101-2.451h-.859l-98.954 64.251-17.618 2.275-7.583-7.103.936-11.652 3.589-3.791 29.749-20.474-.101.102.024.101z"
               />
             </svg>
@@ -254,8 +316,8 @@ export function SkillSet() {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
               <g fill="#181616">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
                 />
                 <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0" />

@@ -36,6 +36,29 @@ export function About() {
       });
 
       /* ===============================
+       HIGHLIGHTS SECTION
+    =============================== */
+
+      const highlightSplitText = SplitText.create(".highlight-contents ul li", {
+        type: "lines",
+        linesClass: "split-line",
+      });
+
+      gsap.set(highlightSplitText.lines, {
+        opacity: 0,
+        yPercent: 50,
+      });
+
+      gsap.to(highlightSplitText.lines, {
+        opacity: 1,
+        yPercent: 0,
+        scrollTrigger: {
+          trigger: ".projects-built",
+          start: "top 75%",
+        },
+      });
+
+      /* ===============================
        WORKS SECTION
     =============================== */
 

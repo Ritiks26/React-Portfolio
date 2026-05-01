@@ -50,12 +50,6 @@
   @media (max-width: 1023px) {
     flex-direction: column;
   }
-
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
 }
 
 .hero-content-and-resume {

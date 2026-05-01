@@ -7,6 +7,7 @@ import "./PageNavigation.css";
 export function PageNavigation() {
   const location = useLocation();
   const pageNavRef = useRef();
+  const prevPath = useRef(null);
 
   const gridSize = () => {
     const width = window.innerWidth;
@@ -18,32 +19,27 @@ export function PageNavigation() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline();
+      if (prevPath.current === null) {
+        prevPath.current = location.pathname;
+        return;
+      }
 
-      gsap.set(pageNavRef.current, {
-        display: "grid",
-        opacity: 1,
-      });
+      if (prevPath.current !== location.pathname) {
+        const tl = gsap.timeline();
 
-      gsap.set(".page-nav-child", {
-        opacity: 1,
-        scale: 1,
-      });
+        gsap.set(pageNavRef.current, {
+          display: "grid",
+          opacity: 1,
+        });
 
-      tl.to(".page-nav-child", {
-        opacity: 0,
-        scale: 0.5,
-        duration: 0.25,
-        ease: "bounce.inOut",
-        stagger: {
-          grid: [10, 30],
-          each: 0.015,
-          from: "random",
-        },
-      })
-        .to(".page-nav-child", {
+        gsap.set(".page-nav-child", {
           opacity: 1,
           scale: 1,
+        });
+
+        tl.to(".page-nav-child", {
+          opacity: 0,
+          scale: 0.5,
           duration: 0.25,
           ease: "bounce.inOut",
           stagger: {
@@ -52,23 +48,37 @@ export function PageNavigation() {
             from: "random",
           },
         })
-        .to(
-          pageNavRef.current,
-          {
+          .to(".page-nav-child", {
             opacity: 1,
-          },
-          "-=0.3",
-        )
-        .to(
-          pageNavRef.current,
-          {
-            opacity: 0,
-          },
-          "-=0.3",
-        )
-        .set(pageNavRef.current, {
-          display: "none",
-        });
+            scale: 1,
+            duration: 0.25,
+            ease: "bounce.inOut",
+            stagger: {
+              grid: [10, 30],
+              each: 0.015,
+              from: "random",
+            },
+          })
+          .to(
+            pageNavRef.current,
+            {
+              opacity: 1,
+            },
+            "-=0.3",
+          )
+          .to(
+            pageNavRef.current,
+            {
+              opacity: 0,
+            },
+            "-=0.3",
+          )
+          .set(pageNavRef.current, {
+            display: "none",
+          });
+      }
+
+      prevPath.current = location.pathname;
     },
     {
       scope: pageNavRef,

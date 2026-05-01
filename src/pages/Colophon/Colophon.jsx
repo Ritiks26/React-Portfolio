@@ -1,7 +1,56 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import { SectionHeading } from "../../components/SectionHeading";
 import "./Colophon.css";
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 export function Colophon() {
+  const coloPhonTextRef = useRef();
+  const bottomHeading = useRef();
+  useGSAP(() => {
+    document.fonts.ready.then(() => {
+      const splitTopText = SplitText.create(coloPhonTextRef.current, {
+        type: "lines",
+      });
+
+      const splitBottomText = SplitText.create(bottomHeading.current, {
+        type: "lines",
+      });
+
+      gsap.set(splitTopText.lines, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 100,
+      });
+
+      gsap.set(splitBottomText.lines, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 100,
+      });
+
+      const tl = gsap.timeline({
+        delay: 1.5,
+      });
+
+      tl.to(splitTopText.lines, {
+        ease: "power2.out",
+        clipPath: "inset(0% 0% 0% 0%)",
+        yPercent: 0,
+      }).to(
+        splitBottomText.lines,
+        {
+          ease: "power2.out",
+          clipPath: "inset(0% 0% 0% 0%)",
+          yPercent: 0,
+        },
+        0,
+      );
+    });
+  }, []);
+
   const inspiredDevs = [
     { name: "Khoa Phan", URL: "https://www.pldkhoa.dev/" },
     { name: "sashasatchi.com", URL: "https://sashasatchi.com/" },
@@ -10,9 +59,9 @@ export function Colophon() {
   return (
     <section className="colophon-container">
       <div className="colophon-child">
-        <h1>colophon</h1>
+        <h1 ref={bottomHeading}>colophon</h1>
 
-        <p>
+        <p ref={coloPhonTextRef}>
           This website is built by <span>Ritik Singh</span> as a space to
           showcase projects, experiments, and{" "}
           <span>creative web development</span> work.
@@ -93,11 +142,11 @@ export function Colophon() {
 
           <div className="inspired-devs">
             <ul>
-              {inspiredDevs.map((dev) => (
+              {inspiredDevs.map((dev, i) => (
                 <>
                   <a href={dev.URL} target="_blank">
                     {" "}
-                    <li>
+                    <li key={i}>
                       {dev.name}{" "}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

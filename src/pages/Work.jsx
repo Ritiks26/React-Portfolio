@@ -4,8 +4,8 @@ import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import { useRef } from "react";
 import { WorkProject } from "../components/WorkProject";
-import "./Work.css";
 import { SectionHeading } from "../components/SectionHeading";
+import "./Work.css";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -36,6 +36,7 @@ export function Work() {
       });
     });
   }, []);
+
   return (
     <>
       <div className="work-section" id="work-section" ref={workRef}>

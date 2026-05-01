@@ -5,8 +5,8 @@ export function Playground() {
     <section className="playground-container">
       <h1>Playground</h1>
       <p>This section is currently under development</p>
-      {/* 
-      <div className="playground-projects">
+
+      {/* <div className="playground-projects">
         <div className="playground-project-wrapper">
           <div className="playground-project">
             <video
