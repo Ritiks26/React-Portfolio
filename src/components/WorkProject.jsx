@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { projectDetail } from "../constant";
+import { projectDetail } from "../constant/index.jsx";
 import { useRef } from "react";
 import "./WorkProject.css";
 
@@ -14,7 +14,7 @@ export function WorkProject() {
 
     gsap.set(projectCardElem, {
       opacity: 0,
-      scale: 0.95,
+      scale: 0.85,
     });
 
     const t1 = gsap.timeline({

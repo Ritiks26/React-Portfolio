@@ -56,7 +56,7 @@
     left: 5%;
     z-index: 10;
     h1 {
-      color: var(--font-black);
+      color: var(--clr-main);
       font-family: var(--font-main);
       font-weight: 500;
       font-size: 1.15rem;
@@ -80,7 +80,7 @@
     margin: 0.75rem 0;
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--font-black);
+    color: var(--clr-main);
 
     strong {
       font-size: 0.85rem;
@@ -96,7 +96,7 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--font-black);
+    color: var(--clr-main);
     cursor: pointer;
 
     svg {

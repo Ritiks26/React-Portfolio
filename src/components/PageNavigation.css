@@ -4,7 +4,7 @@
   z-index: 99;
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: var(--page-transition-bg);
   display: grid;
   grid-template-columns: repeat(30, 1fr);
   display: none;
@@ -26,5 +26,5 @@
 
 .page-nav-child {
   height: 100%;
-  background-color: #dadada;
+  background-color: var(--page-transition-box);
 }

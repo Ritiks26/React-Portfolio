@@ -5,7 +5,7 @@ header {
   right: 0;
   z-index: 50;
 
-  color: var(--font-white);
+  color: var(--bg-main);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -13,20 +13,20 @@ header {
   justify-content: space-between;
   padding: 0.25rem 0.5rem;
   mix-blend-mode: difference;
-  font-family: "barlow condensed";
+  font-family: var(--font-main);
 
   .logo {
     p {
-      font-size: 1rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
   .portfolio-of {
     text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .nav ul {
@@ -37,10 +37,10 @@ header {
 
     li {
       text-transform: uppercase;
-      text-shadow: 0rem -1.2rem 0rem white;
+      text-shadow: 0rem -1rem 0rem white;
       overflow: hidden;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 0.75rem;
       font-weight: 500;
     }
   }

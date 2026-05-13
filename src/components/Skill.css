@@ -1,0 +1,97 @@
+@property --glow-opacity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: -90deg;
+}
+
+.skill-container {
+  width: 100%;
+  padding: 1.25rem;
+  font-family: var(--font-main);
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 0.8515rem + 4.9005vw, 4rem);
+    font-weight: 700;
+    background-image: linear-gradient(var(--heading-gradient));
+    color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-family: "general sans";
+    color: var(--font-primary);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  height: 50%;
+  width: 100%;
+  scale: 0.75;
+  padding: 0.25rem;
+
+  @media (width < 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  color: #dadada;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--bg-skill);
+  padding: 0 0.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: conic-gradient(
+      from var(--glow-deg),
+      #ff4d6d,
+      var(--bg-skill),
+      var(--bg-skill),
+      #ff7a18,
+      #ff7a18,
+      var(--bg-skill),
+      var(--bg-skill),
+      #ff4d6d
+    );
+    inset: -0.125rem;
+    z-index: -1;
+    opacity: var(--glow-opacity);
+  }
+
+  p {
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr-main);
+  }
+}
+
+.icon-wrap {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -9,47 +9,8 @@ import "./Colophon.css";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export function Colophon() {
-  const coloPhonTextRef = useRef();
   const bottomHeading = useRef();
-  useGSAP(() => {
-    document.fonts.ready.then(() => {
-      const splitTopText = SplitText.create(coloPhonTextRef.current, {
-        type: "lines",
-      });
-
-      const splitBottomText = SplitText.create(bottomHeading.current, {
-        type: "lines",
-      });
-
-      gsap.set(splitTopText.lines, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 100,
-      });
-
-      gsap.set(splitBottomText.lines, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 100,
-      });
-
-      const tl = gsap.timeline({
-        delay: 1.5,
-      });
-
-      tl.to(splitTopText.lines, {
-        ease: "power2.out",
-        clipPath: "inset(0% 0% 0% 0%)",
-        yPercent: 0,
-      }).to(
-        splitBottomText.lines,
-        {
-          ease: "power2.out",
-          clipPath: "inset(0% 0% 0% 0%)",
-          yPercent: 0,
-        },
-        0,
-      );
-    });
-  }, []);
+  useGSAP(() => {}, []);
 
   const inspiredDevs = [
     { name: "Khoa Phan", URL: "https://www.pldkhoa.dev/" },
@@ -60,110 +21,52 @@ export function Colophon() {
     <section className="colophon-container">
       <div className="colophon-child">
         <h1 ref={bottomHeading}>colophon</h1>
-
-        <p ref={coloPhonTextRef}>
-          This website is built by <span>Ritik Singh</span> as a space to
-          showcase projects, experiments, and{" "}
-          <span>creative web development</span> work.
+      </div>
+      <div className="tech-used-container">
+        <p>
+          This website is built with React JS using a component-based structure
+          for scalability and maintainability. It uses modern JavaScript (ES6+)
+          for dynamic interactions
         </p>
+        <p>
+          {" "}
+          GSAP enables smooth animations, while Lenis improves scrolling. Styled
+          with HTML5 and CSS3, it features a clean, responsive design and is
+          deployed on Vercel for performance.
+        </p>
+        <h1>Technology</h1>
+      </div>
+      <div className="design-container">
+        <p>
+          The design focuses on minimalism, clarity, and a smooth user
+          experience, keeping projects as the main focus. Typography uses
+          Satoshi for body text and Barlow Condensed for headings, creating a
+          strong visual hierarchy.
+        </p>
+        <p>
+          {" "}
+          The color palette is modern with a personal touch. Icons from
+          Heroicons and TechIcons ensure visual consistency, built with React
+          and GSAP.
+        </p>
+        <h1>design</h1>
       </div>
 
-      <div className="technology-section">
-        <SectionHeading heading={"technology"} />
-
-        <div className="technology-content">
-          <p>
-            This website is built using <span>React.Js,</span> a modern
-            JavaScript library for creating fast and interactive user
-            interfaces. Its component-based architecture allows the site to be
-            organized into reusable parts, making the development process more
-            scalable and maintainable. The core functionality is powered by
-            modern JavaScript (ES6+), enabling dynamic behavior and smooth user
-            interactions. Animations and page transitions are implemented using{" "}
-            <span>GSAP (GreenSock Animation Platform),</span> providing
-            high-performance motion and precise animation control to create
-            smooth navigation and engaging visual experiences.{" "}
-            <span>Lenis</span> is used to enhance the{" "}
-            <span>scrolling experience,</span> delivering smooth and fluid
-            scroll behavior throughout the site.
-          </p>
-
-          <p>
-            For structure and styling, the site uses{" "}
-            <span>HTML5 and CSS3,</span> focusing on a clean, minimal layout and
-            responsive design. The website is deployed on <span>Vercel,</span> a
-            platform optimized for modern frontend applications, ensuring fast
-            builds, reliable performance, and quick loading times.
-          </p>
-        </div>
-      </div>
-
-      <div className="design-section">
-        <SectionHeading heading={"design"} />
-
-        <div className="design-content">
-          <p>
-            The design of this website focuses on minimalism, clarity, and a
-            smooth user experience. The goal was to create a clean interface
-            where the projects and content remain the main focus while
-            maintaining a visually engaging layout.
-          </p>
-
-          <p>
-            For typography, the site uses <span>Satoshi</span> as the primary
-            font for body text and{" "}
-            <span className="barlow-font">Barlow Condensed</span> for headings
-            and navigation. This combination helps create a balance between
-            readability and strong visual hierarchy while giving the interface a
-            modern and distinctive feel.
-          </p>
-          <p>
-            The color palette was inspired by various modern portfolio and
-            creative developer websites, with a few personal adjustments to
-            match the overall aesthetic of the project. The layout follows a
-            responsive and structured design approach, ensuring the site works
-            smoothly across different screen sizes while keeping navigation
-            simple and intuitive.
-          </p>
-        </div>
-      </div>
-
-      <div className="inspiration-section">
-        <SectionHeading heading={"inspirations"} />
-
-        <div className="inspiration-content">
-          <p>
-            The design and overall direction of this website were influenced by
-            various developers, designers, and platforms I came across while
-            exploring modern web portfolios. Their work helped shape the visual
-            style, layout ideas, and interaction approach used throughout this
-            site.
-          </p>
-
-          <div className="inspired-devs">
-            <ul>
-              {inspiredDevs.map((dev, i) => (
-                <>
-                  <a href={dev.URL} target="_blank">
-                    {" "}
-                    <li key={i}>
-                      {dev.name}{" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="size-5"
-                      >
-                        <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z" />
-                        <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z" />
-                      </svg>
-                    </li>
-                  </a>
-                </>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="inspired-container">
+        <p>
+          The design and overall direction of this website were influenced by
+          various developers, designers, and platforms I came across while
+          exploring modern web portfolios.
+        </p>
+        <p style={{ color: "var(--font-primary)" }}>Khoa Phan</p>
+        <p style={{ color: "var(--font-primary)" }}>CodeGrid</p>
+        <p style={{ color: "var(--font-primary)" }}>sashasatchi.com</p>
+        <p>
+          {" "}
+          Their work helped shape the visual style, layout ideas, and
+          interaction approach used throughout this site.
+        </p>
+        <h1>inspired</h1>
       </div>
     </section>
   );

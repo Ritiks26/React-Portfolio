@@ -1,6 +1,5 @@
 .hero-container {
   position: relative;
-  background-color: var(--bg-white);
   height: 100svh;
   width: 100%;
   margin: 0 auto;
@@ -16,6 +15,7 @@
     text-transform: uppercase;
     font-family: var(--font-main);
     font-weight: 500;
+    color: var(--clr-main);
   }
 
   .hero-left {
@@ -73,7 +73,7 @@
 .get-resume {
   border: 2px solid gray;
   background-color: whitesmoke;
-  color: var(--font-black);
+  color: var(--clr-main);
   border-radius: 4rem;
 
   button {

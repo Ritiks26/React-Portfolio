@@ -1,8 +1,7 @@
 import { HeroPage } from "./HeroPage";
 import { About } from "./About";
-import { SkillSet } from "../components/SkillSet";
+import { Skill } from "../components/Skills";
 import { Work } from "./Work";
-import { Contact } from "./Contact";
 import "./HomePage.css";
 
 export function HomePage() {
@@ -10,9 +9,8 @@ export function HomePage() {
     <>
       <HeroPage />
       <About />
-      <SkillSet />
+      <Skill />
       <Work />
-      <Contact />
     </>
   );
 }

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
-import { menus } from "../constant";
+import { menus } from "../constant/index.jsx";
 import "./Header.css";
 
-export function Header() {
+export function Header({ connectOpen, setConnectOpen }) {
   useGSAP(() => {
     const menusElem = document.querySelectorAll(".nav li");
 
@@ -46,6 +46,7 @@ export function Header() {
               <li key={link.id}>{link.title}</li>
             </Link>
           ))}
+          <li onClick={() => setConnectOpen(!connectOpen)}>Connect</li>
         </ul>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Lenis from "lenis";
 import { gsap } from "gsap";
@@ -12,7 +12,24 @@ import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
+function MainLayout({ connectOpen, setConnectOpen }) {
+  return (
+    <>
+      <Header connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
+      <Outlet />
+    </>
+  );
+}
+
+function EmptyLayout() {
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+}
+
+function App({ connectOpen, setConnectOpen }) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -32,27 +49,17 @@ function App() {
     };
   }, []);
 
-  function MainLayout() {
-    return (
-      <>
-        <Header />
-        <Outlet />
-      </>
-    );
-  }
-
-  function EmptyLayout() {
-    return (
-      <>
-        <Outlet />
-      </>
-    );
-  }
-
   return (
     <>
       <Routes>
-        <Route element={<MainLayout />}>
+        <Route
+          element={
+            <MainLayout
+              connectOpen={connectOpen}
+              setConnectOpen={setConnectOpen}
+            />
+          }
+        >
           <Route path="/" element={<HomePage />} />
           <Route path="/playground" element={<Playground />} />
           <Route path="/colophon" element={<Colophon />} />

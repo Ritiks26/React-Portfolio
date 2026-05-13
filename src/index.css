@@ -13,18 +13,32 @@
 }
 
 :root {
-  --bg-black: black;
-  --bg-white: white;
-  --bg-whitesmoke: whitesmoke;
-  --bg-extra: #cf5427;
-  --font-white: white;
-  --font-black: black;
+  --bg-main: #fff;
+  --bg-selection: #dadada;
+  --bg-skill: whitesmoke;
+  --clr-main: #000;
   --font-primary: rgb(161, 161, 161);
+  --heading-gradient: rgb(155, 155, 155), #fff;
+  --page-transition-bg: #fff;
+  --page-transition-box: #dadada;
 
-  /* LOADED FONTS */
   --font-secondary: "general sans";
   --font-main: satoshi;
 }
+
+/* .dark {
+  --bg-main: #000;
+  --bg-selection: #dadada;
+  --bg-skill: #1c1c1c;
+  --clr-main: #fff;
+  --font-primary: rgb(161, 161, 161);
+  --heading-gradient: whitesmoke, #000;
+  --page-transition-bg: #000;
+  --page-transition-box: #101010;
+
+  --font-secondary: "general sans";
+  --font-main: satoshi;
+} */
 
 * {
   padding: 0;
@@ -38,12 +52,12 @@ a {
 }
 
 body {
+  position: relative;
   font-family: "almarena";
-  background-color: var(--bg-white);
-
+  background-color: var(--bg-main);
   &::selection {
-    background-color: #dadada;
-    color: black;
+    background-color: var(--bg-selection);
+    color: var(--font-main);
   }
 }
 

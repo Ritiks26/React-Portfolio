@@ -1,92 +1,109 @@
 .playground-container {
   position: relative;
-  height: 100svh;
   width: 100%;
-  background-color: whitesmoke;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+  color: var(--clr-main);
   font-family: "barlow condensed";
 
-  h1 {
-    /* position: fixed;
-    top: 50%;
+  section {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: clamp(2rem, 0.8515rem + 4.9005vw, 4rem);
+      font-weight: 700;
+      line-height: 1;
+
+      background-image: linear-gradient(var(--heading-gradient));
+      color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .outro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--clr-main);
+    }
+  }
+
+  .project-images {
+    position: absolute;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%); */
-    color: var(--font-white);
+    transform: translateX(-50%);
+    width: 35%;
+    padding: 50svh 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: -1;
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 0.25rem;
+  }
+
+  .project-names {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .project-names {
+    p {
+      color: var(--font-primary);
+      transition: color 0.3s ease;
+    }
+  }
+
+  .project-index h1,
+  .project-images,
+  .project-names p {
+    will-change: transform;
+  }
+
+  .project-index h1 {
     text-transform: uppercase;
-    font-size: 2.5rem;
-    font-family: "telma";
-    mix-blend-mode: difference;
-  }
-
-  p {
-    font-size: 1rem;
+    font-size: clamp(3rem, 5vw, 7rem);
     font-weight: 500;
+    line-height: 1;
   }
-}
 
-.playground-projects {
-  height: 100svh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  @media (max-width: 1000px) {
+    .project-images {
+      width: calc(100% - 4rem);
+      gap: 25svh;
+    }
 
-.playground-project-wrapper {
-  margin-top: 1rem;
-  padding: 0 1rem;
-  height: 50%;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.playground-project {
-  /* height: 65%;
-  width: 25%; */
-
-  width: 25%;
-  aspect-ratio: 16 / 9;
-
-  background-image: url("../../assets/pics/mockups/laptop-4.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  cursor: pointer;
-}
-
-.playground-projects
-  .playground-project-wrapper:nth-child(1)
-  .playground-project:nth-child(2) {
-  /* height: 100%;
-  width: 35%; */
-
-  width: 35%;
-  aspect-ratio: 16 / 9;
-}
-
-.playground-projects
-  .playground-project-wrapper:nth-child(2)
-  .playground-project:nth-child(1) {
-  /* height: 85%;
-  width: 35%; */
-
-  width: 35%;
-  aspect-ratio: 4 / 2;
-}
-
-.playground-projects
-  .playground-project-wrapper:nth-child(2)
-  .playground-project:nth-child(2) {
-  /* height: 50%;
-  width: 15%; */
-
-  width: 15%;
-  aspect-ratio: 2 / 2;
+    .project-names p {
+      color: #000 !important;
+    }
+  }
 }

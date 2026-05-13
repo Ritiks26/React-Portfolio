@@ -3,7 +3,6 @@
 }
 
 .work-container {
-  background-color: var(--bg-white);
   color: var(--font-white);
   margin: 0;
   padding: 1rem 1.25rem;
@@ -14,17 +13,17 @@
     overflow: hidden;
 
     h3 {
-      color: var(--bg-black);
+      color: var(--clr-main);
       font-size: 0.9rem;
       font-weight: 600;
       text-transform: uppercase;
     }
 
     p {
-      font-size: 1.15rem;
+      font-size: 1rem;
       width: 85%;
       margin: 0.75rem 0;
-      color: var(--font-black);
+      color: var(--clr-main);
     }
   }
 }
