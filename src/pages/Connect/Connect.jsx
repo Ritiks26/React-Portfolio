@@ -9,13 +9,13 @@ export function Connect({ connectOpen, setConnectOpen }) {
   useGSAP(() => {
     const contactContainer = gsap.utils.toArray(".connect-container");
 
-    gsap.set(".conntect-wrapper", {
+    gsap.set(".connect-wrapper", {
       yPercent: 200,
     });
 
     tl.current = gsap.timeline({ paused: true });
 
-    tl.current.to(".conntect-wrapper", {
+    tl.current.to(".connect-wrapper", {
       yPercent: -50,
       duration: 1,
       ease: "power4.inOut",
@@ -33,10 +33,7 @@ export function Connect({ connectOpen, setConnectOpen }) {
   }, [connectOpen]);
 
   return (
-    <div
-      className="conntect-wrapper"
-      onClick={() => setConnectOpen(!connectOpen)}
-    >
+    <div className="connect-wrapper">
       <section className="connect-container">
         <div className="connect-top">
           <p>CONTACT US</p>
@@ -93,6 +90,12 @@ export function Connect({ connectOpen, setConnectOpen }) {
           </div>
         </div>
       </section>
+      <div
+        className="close-connect"
+        onClick={() => setConnectOpen(!connectOpen)}
+      >
+        close
+      </div>
     </div>
   );
 }
