@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import Lenis from "lenis";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Header } from "../src/components/Header.jsx";
 import { HomePage } from "./pages/HomePage";
@@ -30,6 +31,8 @@ function EmptyLayout() {
 }
 
 function App({ connectOpen, setConnectOpen }) {
+  const appContainerRef = useRef(null);
+  const tl = useRef(null);
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -49,27 +52,49 @@ function App({ connectOpen, setConnectOpen }) {
     };
   }, []);
 
-  return (
-    <>
-      <Routes>
-        <Route
-          element={
-            <MainLayout
-              connectOpen={connectOpen}
-              setConnectOpen={setConnectOpen}
-            />
-          }
-        >
-          <Route path="/" element={<HomePage />} />
-          <Route path="/playground" element={<Playground />} />
-          <Route path="/colophon" element={<Colophon />} />
-        </Route>
+  useGSAP(() => {
+    tl.current = gsap.timeline({ paused: true });
 
-        <Route element={<EmptyLayout />}>
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </>
+    tl.current.to(appContainerRef.current, {
+      transform: "scale(1.05)",
+      duration: 1,
+      ease: "power4.inOut",
+    });
+  }, []);
+
+  useGSAP(() => {
+    if (!tl.current) return;
+
+    if (connectOpen) {
+      tl.current.play();
+    } else {
+      tl.current.reverse();
+    }
+  }, [connectOpen]);
+
+  return (
+    <div className="app-container">
+      <div className="app-wrapper" ref={appContainerRef}>
+        <Routes>
+          <Route
+            element={
+              <MainLayout
+                connectOpen={connectOpen}
+                setConnectOpen={setConnectOpen}
+              />
+            }
+          >
+            <Route path="/" element={<HomePage />} />
+            <Route path="/playground" element={<Playground />} />
+            <Route path="/colophon" element={<Colophon />} />
+          </Route>
+
+          <Route element={<EmptyLayout />}>
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </div>
+    </div>
   );
 }
 

@@ -1,11 +1,19 @@
-.connect-container {
-  height: 80svh;
-  width: 70%;
-  /* background-color: #000; */
+.conntect-wrapper {
+  height: 100svh;
+  width: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-container {
+  height: 80%;
+  width: 70%;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -105,7 +113,6 @@
 @media (max-width: 768px) {
   .connect-container {
     padding: 1.5rem;
-    overflow-y: auto;
     width: 80%;
     height: 80%;
   }

@@ -32,11 +32,12 @@
 .inspired-container {
   display: flex;
   flex-direction: column;
+  align-items: end;
   height: 50svh;
   width: 100%;
 
   p {
-    width: 90%;
+    width: 75%;
     font-family: var(--font-main);
     font-family: "barlow condensed";
     text-transform: uppercase;
@@ -48,12 +49,16 @@
     &:nth-child(2) {
       color: var(--font-primary);
     }
+
+    @media (width < 640px) {
+      width: 90%;
+    }
   }
 
   h1 {
     font-family: var(--font-main);
     margin: 1rem 0;
-    text-align: right;
+    text-align: left;
     text-transform: uppercase;
     font-size: clamp(2.25rem, 1.8193rem + 1.8377vw, 3rem);
     font-weight: 500;
