@@ -11,6 +11,7 @@ export function Connect({ connectOpen, setConnectOpen }) {
 
     gsap.set(".connect-wrapper", {
       yPercent: 200,
+      scale: 0.25,
     });
 
     tl.current = gsap.timeline({ paused: true });
@@ -19,6 +20,7 @@ export function Connect({ connectOpen, setConnectOpen }) {
       yPercent: -50,
       duration: 1,
       ease: "power4.inOut",
+      scale: 1,
     });
   }, []);
 

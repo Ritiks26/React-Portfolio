@@ -5,12 +5,12 @@
 .work-container {
   color: var(--font-white);
   margin: 0;
-  padding: 1rem 1.25rem;
   font-family: var(--font-main);
 
   .work-content {
     margin-top: 2rem;
     overflow: hidden;
+    padding: 0 0.75rem;
 
     h3 {
       color: var(--clr-main);

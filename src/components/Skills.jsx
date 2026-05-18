@@ -54,6 +54,27 @@ export function Skill() {
       });
     });
   }, []);
+
+  useGSAP(() => {
+    const triggerTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skill-container",
+        start: "top 45%",
+      },
+    });
+
+    gsap.set(".skills-content", {
+      filter: "blur(2rem)",
+    });
+
+    triggerTl.to(".skills-content", {
+      filter: "blur(0rem)",
+      duration: 1,
+      ease: "back.inOut",
+      stagger: 0.025,
+    });
+  }, []);
+
   return (
     <div className="skill-container">
       <h1>TECHSTACK</h1>
@@ -62,8 +83,11 @@ export function Skill() {
         {coreSkills.map((skill, i) => (
           <div className="skills" key={i}>
             {" "}
-            <div className="icon-wrap">{skill.icon}</div>
-            <p>{skill.tech}</p>
+            <div className="skills-content">
+              <div className="icon-wrap">{skill.icon}</div>
+              <p>{skill.tech}</p>
+            </div>
+            <div className="skill-inner"></div>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -13,25 +13,11 @@ import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function MainLayout({ connectOpen, setConnectOpen }) {
-  return (
-    <>
-      <Header connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
-      <Outlet />
-    </>
-  );
-}
-
-function EmptyLayout() {
-  return (
-    <>
-      <Outlet />
-    </>
-  );
-}
-
 function App({ connectOpen, setConnectOpen }) {
   const appContainerRef = useRef(null);
+  const location = useLocation();
+  const is404 = !["/", "/playground", "/colophon"].includes(location.pathname);
+
   const tl = useRef(null);
   useEffect(() => {
     const lenis = new Lenis({
@@ -52,49 +38,20 @@ function App({ connectOpen, setConnectOpen }) {
     };
   }, []);
 
-  useGSAP(() => {
-    tl.current = gsap.timeline({ paused: true });
-
-    tl.current.to(appContainerRef.current, {
-      transform: "scale(1.05)",
-      duration: 1,
-      ease: "power4.inOut",
-    });
-  }, []);
-
-  useGSAP(() => {
-    if (!tl.current) return;
-
-    if (connectOpen) {
-      tl.current.play();
-    } else {
-      tl.current.reverse();
-    }
-  }, [connectOpen]);
-
   return (
-    <div className="app-container">
-      <div className="app-wrapper" ref={appContainerRef}>
-        <Routes>
-          <Route
-            element={
-              <MainLayout
-                connectOpen={connectOpen}
-                setConnectOpen={setConnectOpen}
-              />
-            }
-          >
-            <Route path="/" element={<HomePage />} />
-            <Route path="/playground" element={<Playground />} />
-            <Route path="/colophon" element={<Colophon />} />
-          </Route>
+    <>
+      {!is404 && (
+        <Header connectOpen={connectOpen} setConnectOpen={setConnectOpen} />
+      )}
 
-          <Route element={<EmptyLayout />}>
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/playground" element={<Playground />} />
+        <Route path="/colophon" element={<Colophon />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

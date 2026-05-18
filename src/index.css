@@ -52,6 +52,7 @@ a {
 }
 
 body {
+  padding: 0 0.5rem;
   position: relative;
   font-family: "almarena";
   background-color: var(--bg-main);

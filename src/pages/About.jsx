@@ -64,7 +64,7 @@ export function About() {
     <>
       <div className="about-section" id="about-section">
         <div className="about-container">
-          <SectionHeading heading={"ABOUT"} />
+          <SectionHeading heading={"About"} />
           <div className="about-content">
             <p>
               Frontend Web Developer with hands-on experience building
@@ -80,18 +80,6 @@ export function About() {
               concepts into polished digital experiences while staying current
               with modern frontend trends.
             </p>
-            {/* <p>
-              Frontend Web Developer with hands-on experience building
-              responsive, interactive web applications using{" "}
-              <span>React Js, JavaScript, GSAP, HTML,</span> and{" "}
-              <span>CSS</span>. I specialize in crafting modern UIs with smooth
-              animations and clean, scalable code — with a strong grasp of
-              component-based architecture and real-world project experience
-              across e-commerce, quiz, and task management apps. I'm
-              detail-oriented, UX-focused, and passionate about turning concepts
-              into polished digital experiences while staying current with
-              modern frontend trends.
-            </p> */}
           </div>
 
           <div className="highlight-contents">

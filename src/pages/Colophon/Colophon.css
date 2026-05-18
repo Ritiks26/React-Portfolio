@@ -1,7 +1,6 @@
 .colophon-container {
   background-color: var(--bg-white);
-
-  padding: 1rem 1.25rem;
+  padding: 1rem 0.75rem;
 }
 
 .colophon-child {
@@ -18,41 +17,36 @@
 
   h1 {
     text-transform: uppercase;
-    font-size: clamp(2rem, 0.8515rem + 4.9005vw, 4rem);
-    font-weight: 700;
+    font-size: clamp(2.25rem, 1.8193rem + 1.8377vw, 3rem);
+    font-weight: 500;
     line-height: 1;
-    background-image: linear-gradient(var(--heading-gradient));
-    color: transparent;
-    background-clip: text;
+    color: var(--clr-main);
+    font-family: telma;
   }
 }
 
-.tech-used-container,
-.design-container,
-.inspired-container {
+.colophon-content-container {
   display: flex;
   flex-direction: column;
   align-items: end;
-  height: 50svh;
   width: 100%;
 
   p {
-    width: 75%;
+    width: 85%;
     font-family: var(--font-main);
-    font-family: "barlow condensed";
-    text-transform: uppercase;
-    font-size: 1.25rem;
+    /* text-transform: uppercase; */
+    font-size: 1rem;
     font-weight: 500;
     margin: 0.25rem 0;
     color: var(--clr-main);
 
-    &:nth-child(2) {
-      color: var(--font-primary);
-    }
-
     @media (width < 640px) {
       width: 90%;
     }
+  }
+
+  .light-color {
+    color: var(--font-primary);
   }
 
   h1 {
@@ -63,12 +57,6 @@
     font-size: clamp(2.25rem, 1.8193rem + 1.8377vw, 3rem);
     font-weight: 500;
     line-height: 1;
-    color: #000;
-  }
-}
-
-.design-container {
-  h1 {
-    text-align: left;
+    color: var(--clr-main);
   }
 }

@@ -13,6 +13,7 @@
 .skill-container {
   width: 100%;
   padding: 1.25rem;
+  overflow: hidden;
   font-family: var(--font-main);
 
   h1 {
@@ -23,6 +24,7 @@
     background-image: linear-gradient(var(--heading-gradient));
     color: transparent;
     background-clip: text;
+    font-family: "barlow condensed";
   }
 
   p {
@@ -45,7 +47,7 @@
   padding: 0.25rem;
 
   @media (width < 640px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -54,16 +56,21 @@
   height: 100%;
   aspect-ratio: 1 / 1;
   color: #dadada;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   background-color: var(--bg-skill);
   padding: 0 0.5rem;
 
-  &::before {
-    content: "";
+  .skills-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  .skill-inner {
     position: absolute;
     background-image: conic-gradient(
       from var(--glow-deg),

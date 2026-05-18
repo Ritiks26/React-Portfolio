@@ -6,14 +6,14 @@ header {
   z-index: 100;
   isolation: isolate;
 
-  color: var(--clr-main);
+  color: var(--bg-main);
   width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: start;
   justify-content: space-between;
   padding: 0.25rem 0.5rem;
-  /* mix-blend-mode: difference; */
+  mix-blend-mode: difference;
   font-family: var(--font-main);
 
   .logo {
@@ -28,6 +28,10 @@ header {
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: 500;
+
+    @media (width < 640px) {
+      display: none;
+    }
   }
 
   .nav ul {
@@ -38,7 +42,7 @@ header {
 
     li {
       text-transform: uppercase;
-      text-shadow: 0rem -1rem 0rem #000;
+      text-shadow: 0rem -1rem 0rem #fff;
       overflow: hidden;
       cursor: pointer;
       font-size: 0.75rem;
