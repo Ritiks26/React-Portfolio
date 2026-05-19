@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App({ connectOpen, setConnectOpen }) {
   const appContainerRef = useRef(null);
   const location = useLocation();
+  ``;
   const is404 = !["/", "/playground", "/colophon"].includes(location.pathname);
 
   const tl = useRef(null);
@@ -37,6 +38,10 @@ function App({ connectOpen, setConnectOpen }) {
       lenis.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>

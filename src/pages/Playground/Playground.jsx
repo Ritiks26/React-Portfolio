@@ -1,14 +1,16 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useState } from "react";
 import "./Playground.css";
-import { useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export function Playground() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [totalProjects, setTotalProjects] = useState(null);
+  const playgroundHeadingRef = useRef(null);
 
   useGSAP(() => {
     const spotlight = gsap.utils.toArray(".spotlight");
@@ -124,10 +126,31 @@ export function Playground() {
     });
   }, []);
 
+  useGSAP(() => {
+    document.fonts.ready.then(() => {
+      const playgroundHeading = playgroundHeadingRef.current;
+      const splitPlaygroundHeading = SplitText.create(playgroundHeading, {
+        type: "chars",
+      });
+
+      gsap.set(splitPlaygroundHeading.chars, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 200,
+      });
+
+      gsap.to(splitPlaygroundHeading.chars, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        yPercent: 0,
+        ease: "power1.inOut",
+        delay: 1.5,
+      });
+    });
+  }, []);
+
   return (
     <section className="playground-container">
       <section className="intro">
-        <h1>playground</h1>
+        <h1 ref={playgroundHeadingRef}>playground</h1>
       </section>
 
       <section className="spotlight">

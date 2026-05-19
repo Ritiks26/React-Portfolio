@@ -18,10 +18,10 @@
   h1 {
     text-transform: uppercase;
     font-size: clamp(2.25rem, 1.8193rem + 1.8377vw, 3rem);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
     color: var(--clr-main);
-    font-family: telma;
+    font-family: "barlow condensed";
   }
 }
 

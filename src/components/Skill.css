@@ -21,9 +21,7 @@
     text-transform: uppercase;
     font-size: clamp(2rem, 0.8515rem + 4.9005vw, 4rem);
     font-weight: 700;
-    background-image: linear-gradient(var(--heading-gradient));
-    color: transparent;
-    background-clip: text;
+    color: var(--clr-main);
     font-family: "barlow condensed";
   }
 

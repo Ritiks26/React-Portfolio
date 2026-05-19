@@ -56,29 +56,58 @@ export function Skill() {
   }, []);
 
   useGSAP(() => {
-    const triggerTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".skill-container",
-        start: "top 45%",
-      },
-    });
+    document.fonts.ready.then(() => {
+      const skillHeading = SplitText.create(".skill-container h1", {
+        type: "chars",
+      });
+      const skillText = SplitText.create(".heading-text", {
+        type: "chars",
+      });
+      const triggerTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".skill-container",
+          start: "top 45%",
+        },
+      });
 
-    gsap.set(".skills-content", {
-      filter: "blur(2rem)",
-    });
+      gsap.set(".skills-content", {
+        filter: "blur(2rem)",
+      });
 
-    triggerTl.to(".skills-content", {
-      filter: "blur(0rem)",
-      duration: 1,
-      ease: "back.inOut",
-      stagger: 0.025,
+      gsap.set(skillHeading.chars, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 100,
+      });
+
+      gsap.set(skillText.chars, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 100,
+      });
+
+      triggerTl
+        .to(skillHeading.chars, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          yPercent: 0,
+          ease: "back.inOut",
+        })
+        .to(skillText.chars, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          yPercent: 0,
+          ease: "back.inOut",
+        })
+        .to(".skills-content", {
+          filter: "blur(0rem)",
+          duration: 1,
+          ease: "back.inOut",
+          stagger: 0.025,
+        });
     });
   }, []);
 
   return (
     <div className="skill-container">
       <h1>TECHSTACK</h1>
-      <p>Tools behind the build.</p>
+      <p className="heading-text">Tools behind the build.</p>
       <div className="skills-grid">
         {coreSkills.map((skill, i) => (
           <div className="skills" key={i}>
