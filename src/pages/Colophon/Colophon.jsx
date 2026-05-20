@@ -1,177 +1,134 @@
-// import { useRef } from "react";
-// import { gsap } from "gsap";
-// import { useGSAP } from "@gsap/react";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { SplitText } from "gsap/SplitText";
-// import { SectionHeading } from "../../components/SectionHeading";
-// import "./Colophon.css";
-
-// gsap.registerPlugin(ScrollTrigger, SplitText);
-
-// export function Colophon() {
-//   const bottomHeading = useRef();
-//   useGSAP(() => {
-//     document.fonts.ready.then(() => {
-//       const colophonHeading = bottomHeading.current;
-//       const splitColophonHeading = SplitText.create(colophonHeading, {
-//         type: "chars",
-//       });
-
-//       gsap.set(splitColophonHeading.chars, {
-//         clipPath: "inset(0% 0% 100% 0%)",
-//         yPercent: 200,
-//       });
-
-//       gsap.to(splitColophonHeading.chars, {
-//         clipPath: "inset(0% 0% 0% 0%)",
-//         yPercent: 0,
-//         ease: "power1.inOut",
-//         delay: 1.5,
-//       });
-
-//       const tl = gsap.timeline({});
-
-//       gsap.set("colophon-content-container p", {
-//         opacity: 0,
-//       });
-//     });
-//   }, []);
-
-//   const inspiredDevs = [
-//     { name: "Khoa Phan", URL: "https://www.pldkhoa.dev/" },
-//     { name: "sashasatchi.com", URL: "https://sashasatchi.com/" },
-//     { name: "Codegrid", URL: "https://www.youtube.com/@codegrid" },
-//   ];
-//   return (
-//     <section className="colophon-container">
-//       <div className="colophon-child">
-//         <h1 ref={bottomHeading}>colophon</h1>
-//       </div>
-//       <div className="colophon-content-container">
-//         <p>
-//           This website is built with React JS using a component-based structure
-//           and modern JavaScript (ES6+) for dynamic interactions.
-//         </p>
-//         <p className="light-color">
-//           GSAP and Lenis create smooth animations and scrolling, while HTML5 and
-//           CSS3 provide a clean, responsive design deployed on Vercel.
-//         </p>
-//         <h1>Technology</h1>
-//         <p>
-//           The design focuses on minimalism, clarity, and a smooth user
-//           experience, keeping projects as the main focus.
-//         </p>
-//         <p className="light-color">
-//           Typography uses Satoshi and Barlow Condensed for a strong visual
-//           hierarchy, while Heroicons and TechIcons maintain visual consistency
-//           with React and GSAP.
-//         </p>
-//         <h1>design</h1>
-//         <p>
-//           The design and direction of this website were inspired by modern
-//           portfolio creators and platforms like
-//         </p>
-//         <p className="light-color">Khoa Phan</p>
-//         <p className="light-color">CodeGrid</p>
-//         <p className="light-color">sashasatchi.com</p>
-//         <h1>inspired</h1>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import "./Colophon.css";
+import { SectionHeading } from "../../components/SectionHeading";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export function Colophon() {
-  const bottomHeading = useRef();
-  const contentRef = useRef();
+  const containerRef = useRef(null);
 
-  useGSAP(() => {
-    document.fonts.ready.then(() => {
-      // --- Heading animation (on mount) ---
-      const colophonHeading = bottomHeading.current;
-      const splitColophonHeading = SplitText.create(colophonHeading, {
-        type: "chars",
+  // useGSAP(
+  //   () => {
+  //     const targets = containerRef.current.querySelectorAll(
+  //       ".colophon-child h1, .tech-used h1, .design-section h1",
+  //     );
+
+  //     targets.forEach((heading) => {
+  //       const split = new SplitText(heading, { type: "lines" });
+
+  //       gsap.set(split.lines, {
+  //         clipPath: "inset(0 0 100% 0)",
+  //         y: 40,
+  //       });
+
+  //       gsap.to(split.lines, {
+  //         clipPath: "inset(0 0 0% 0)",
+  //         y: 0,
+  //         duration: 0.75,
+  //         ease: "back.inOut",
+  //         stagger: 0.12,
+  //         scrollTrigger: {
+  //           trigger: heading,
+  //           start: "top 85%",
+  //         },
+  //       });
+  //     });
+  //   },
+  //   { scope: containerRef },
+  // );
+  useGSAP(
+    () => {
+      const targets = containerRef.current.querySelectorAll(
+        ".colophon-child h1, .tech-used h1, .design-section h1",
+      );
+
+      targets.forEach((heading) => {
+        const split = new SplitText(heading, { type: "lines" });
+        const isColophon = heading.closest(".colophon-child");
+
+        gsap.set(split.lines, {
+          clipPath: "inset(0 0 100% 0)",
+          y: 40,
+        });
+
+        gsap.to(split.lines, {
+          clipPath: "inset(0 0 0% 0)",
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          stagger: 0.12,
+          delay: isColophon ? 1.5 : 0,
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 85%",
+          },
+        });
       });
-
-      gsap.set(splitColophonHeading.chars, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 200,
-      });
-
-      gsap.to(splitColophonHeading.chars, {
-        clipPath: "inset(0% 0% 0% 0%)",
-        yPercent: 0,
-        ease: "power1.inOut",
-        delay: 1.5,
-      });
-
-      // --- Content animation (scroll-triggered) ---
-      const items = contentRef.current.querySelectorAll("p, h1");
-
-      gsap.set(items, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 100,
-        opacity: 1,
-      });
-
-      ScrollTrigger.batch(items, {
-        start: "top 100%",
-        onEnter: (batch) => {
-          gsap.to(batch, {
-            clipPath: "inset(0% 0% 0% 0%)",
-            yPercent: 0,
-            ease: "power2.out",
-            duration: 0.8,
-            stagger: 0.1,
-          });
-        },
-        once: true,
-      });
-    });
-  }, []);
-
+    },
+    { scope: containerRef },
+  );
   return (
-    <section className="colophon-container">
+    <section className="colophon-container" ref={containerRef}>
       <div className="colophon-child">
-        <h1 ref={bottomHeading}>colophon</h1>
+        <h1>colophon</h1>
       </div>
 
-      <div className="colophon-content-container" ref={contentRef}>
-        <p>
-          This website is built with React JS using a component-based structure
-          and modern JavaScript (ES6+) for dynamic interactions.
-        </p>
-        <p className="light-color">
-          GSAP and Lenis create smooth animations and scrolling, while HTML5 and
-          CSS3 provide a clean, responsive design deployed on Vercel.
-        </p>
-        <h1>Technology</h1>
-        <p>
-          The design focuses on minimalism, clarity, and a smooth user
-          experience, keeping projects as the main focus.
-        </p>
-        <p className="light-color">
-          Typography uses Satoshi and Barlow Condensed for a strong visual
-          hierarchy, while Heroicons and TechIcons maintain visual consistency
-          with React and GSAP.
-        </p>
-        <h1>design</h1>
-        <p>
-          The design and direction of this website were inspired by modern
-          portfolio creators and platforms like
-        </p>
-        <p className="light-color">Khoa Phan</p>
-        <p className="light-color">CodeGrid</p>
-        <p className="light-color">sashasatchi.com</p>
-        <h1>inspired</h1>
+      <div className="tech-used">
+        <p>technology</p>
+        <h1>
+          <span style={{ color: "#353532" }}>Built with React JS, GSAP,</span>
+          <br />{" "}
+          <span style={{ color: "#aeaeae" }}>
+            and Lenis — smooth animations, clean
+          </span>
+          <br />
+          <span style={{ color: "#aeaeae" }}>design, deployed on Vercel</span>
+        </h1>
+      </div>
+
+      <div className="design-section">
+        <p>design</p>
+        <h1>
+          <span style={{ color: "#353532" }}>
+            Minimal design, strong typography
+          </span>
+          <br />{" "}
+          <span style={{ color: "#aeaeae" }}>
+            with Satoshi and Barlow Condensed,
+          </span>
+          <br />
+          <span style={{ color: "#aeaeae" }}>
+            {" "}
+            icons via Heroicons and TechIcons.
+          </span>
+        </h1>
+      </div>
+
+      <div className="design-section">
+        <p>inspired</p>
+        <h1>
+          <span style={{ color: "#353532" }}>
+            Inspired by modern portfolios
+          </span>
+          <br />{" "}
+          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+            khoa phan
+          </span>
+          <br />
+          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+            {" "}
+            codegrid
+          </span>
+          <br />
+          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+            {" "}
+            sashasatchi
+          </span>
+        </h1>
       </div>
     </section>
   );

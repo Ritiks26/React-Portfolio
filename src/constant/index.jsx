@@ -21,7 +21,6 @@ export const projectDetail = [
     website: "TRINITY - COLLEGE, COLLEGE WEBSITE",
     projectLink: "https://trinity-sandy.vercel.app/",
     Image: laptopImage1,
-    isFreeLance: "FREELANCE",
     content: "College Platform",
   },
   {
@@ -380,7 +379,7 @@ export const coreSkills = [
     ),
   },
   {
-    tech: "Rest API Integration",
+    tech: "Rest API",
     icon: (
       <svg
         height="90"

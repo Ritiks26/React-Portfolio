@@ -25,38 +25,33 @@
   }
 }
 
-.colophon-content-container {
+.tech-used,
+.design-section {
   display: flex;
   flex-direction: column;
-  align-items: end;
+
   width: 100%;
+  margin-bottom: 4rem;
 
   p {
-    width: 85%;
+    font-size: 0.75rem;
     font-family: var(--font-main);
-    /* text-transform: uppercase; */
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0.25rem 0;
-    color: var(--clr-main);
-
-    @media (width < 640px) {
-      width: 90%;
-    }
-  }
-
-  .light-color {
-    color: var(--font-primary);
+    margin: 0 0 2rem 0;
+    text-align: left;
+    text-transform: uppercase;
   }
 
   h1 {
-    font-family: var(--font-main);
-    margin: 1rem 0;
-    text-align: left;
     text-transform: uppercase;
-    font-size: clamp(2.25rem, 1.8193rem + 1.8377vw, 3rem);
-    font-weight: 500;
+    width: 65%;
+    font-size: clamp(2.5rem, 2.2143rem + 1.4286vw, 3.5rem);
+    font-family: var(--font-main);
+    font-family: "barlow condensed";
     line-height: 1;
-    color: var(--clr-main);
+    font-weight: 600;
+
+    @media (width < 640px) {
+      width: 95%;
+    }
   }
 }

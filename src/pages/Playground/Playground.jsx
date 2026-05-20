@@ -135,13 +135,14 @@ export function Playground() {
 
       gsap.set(splitPlaygroundHeading.chars, {
         clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 200,
+        yPercent: 40,
       });
 
       gsap.to(splitPlaygroundHeading.chars, {
         clipPath: "inset(0% 0% 0% 0%)",
         yPercent: 0,
-        ease: "power1.inOut",
+        duration: 0.9,
+        ease: "power3.out",
         delay: 1.5,
       });
     });

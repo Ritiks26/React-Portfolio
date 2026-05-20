@@ -120,6 +120,11 @@ export function Skill() {
           </div>
         ))}
       </div>
+      {/* <div className="skills-section">
+        {coreSkills.map((skill, i) => (
+          <h1>{skill.tech}</h1>
+        ))}
+      </div> */}
     </div>
   );
 }
