@@ -30,7 +30,7 @@ header {
     font-weight: 500;
 
     @media (width < 640px) {
-      display: none;
+      /* display: none; */
     }
   }
 

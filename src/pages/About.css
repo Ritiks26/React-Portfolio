@@ -1,6 +1,7 @@
 .about-container {
   z-index: 5;
   font-family: var(--font-main);
+  margin-bottom: 2rem;
 
   .about-content {
     display: flex;

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -60,9 +61,6 @@ export function Skill() {
       const skillHeading = SplitText.create(".skill-container h1", {
         type: "chars",
       });
-      const skillText = SplitText.create(".heading-text", {
-        type: "chars",
-      });
       const triggerTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".skill-container",
@@ -79,18 +77,8 @@ export function Skill() {
         yPercent: 100,
       });
 
-      gsap.set(skillText.chars, {
-        clipPath: "inset(0% 0% 100% 0%)",
-        yPercent: 100,
-      });
-
       triggerTl
         .to(skillHeading.chars, {
-          clipPath: "inset(0% 0% 0% 0%)",
-          yPercent: 0,
-          ease: "back.inOut",
-        })
-        .to(skillText.chars, {
           clipPath: "inset(0% 0% 0% 0%)",
           yPercent: 0,
           ease: "back.inOut",
@@ -104,11 +92,45 @@ export function Skill() {
     });
   }, []);
 
+  useGSAP(() => {
+    const skillContainer = gsap.utils.toArray(".skill-container");
+
+    skillContainer.forEach((section) => {
+      const skillSection = section.querySelector(".skills-section");
+
+      const skillSectionPadding = parseFloat(
+        getComputedStyle(skillSection).padding,
+      );
+
+      const scrollDistance =
+        skillSection.scrollHeight - skillSection.clientHeight;
+
+      gsap.set(".skills-section", {
+        y: 0,
+      });
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: `+=${scrollDistance}px`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          gsap.set(skillSection, {
+            y: progress * -scrollDistance,
+          });
+        },
+      });
+    });
+  }, []);
+
   return (
     <div className="skill-container">
       <h1>TECHSTACK</h1>
-      <p className="heading-text">Tools behind the build.</p>
-      <div className="skills-grid">
+      {/* <div className="skills-grid">
         {coreSkills.map((skill, i) => (
           <div className="skills" key={i}>
             {" "}
@@ -119,12 +141,12 @@ export function Skill() {
             <div className="skill-inner"></div>
           </div>
         ))}
-      </div>
-      {/* <div className="skills-section">
+      </div> */}
+      <div className="skills-section">
         {coreSkills.map((skill, i) => (
           <h1>{skill.tech}</h1>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -78,7 +78,7 @@ export function Colophon() {
       </div>
 
       <div className="tech-used">
-        <p>technology</p>
+        <h3>technology</h3>
         <h1>
           <span style={{ color: "#353532" }}>Built with React JS, GSAP,</span>
           <br />{" "}
@@ -91,7 +91,7 @@ export function Colophon() {
       </div>
 
       <div className="design-section">
-        <p>design</p>
+        <h3>design</h3>
         <h1>
           <span style={{ color: "#353532" }}>
             Minimal design, strong typography
@@ -108,23 +108,44 @@ export function Colophon() {
         </h1>
       </div>
 
-      <div className="design-section">
-        <p>inspired</p>
+      <div className="inspire-section">
+        <h3>inspired</h3>
         <h1>
           <span style={{ color: "#353532" }}>
             Inspired by modern portfolios
           </span>
           <br />{" "}
-          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+          <span
+            style={{
+              color: "#aeaeae",
+              paddingLeft: "0.75rem",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
             khoa phan
           </span>
           <br />
-          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+          <span
+            style={{
+              color: "#aeaeae",
+              paddingLeft: "0.75rem",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
             {" "}
             codegrid
           </span>
           <br />
-          <span style={{ color: "#aeaeae", paddingLeft: "0.75rem" }}>
+          <span
+            style={{
+              color: "#aeaeae",
+              paddingLeft: "0.75rem",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
             {" "}
             sashasatchi
           </span>

@@ -33,12 +33,14 @@ export function Header({ connectOpen, setConnectOpen }) {
   });
   return (
     <header>
-      <div className="logo">
+      {/* <div className="logo">
         <Link to={"/"}>
           <p>Ritik Singh</p>
         </Link>
-      </div>
-      <div className="portfolio-of">frontend developer</div>
+      </div> */}
+      <Link to={"/"}>
+        <div className="portfolio-of">front. dev.</div>
+      </Link>
       <div className="nav">
         <ul>
           {menus.map((link) => (

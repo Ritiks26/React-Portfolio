@@ -26,19 +26,21 @@
 }
 
 .tech-used,
-.design-section {
+.design-section,
+.inspire-section {
   display: flex;
   flex-direction: column;
 
   width: 100%;
   margin-bottom: 4rem;
 
-  p {
-    font-size: 0.75rem;
+  h3 {
+    color: var(--clr-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
     font-family: var(--font-main);
     margin: 0 0 2rem 0;
-    text-align: left;
-    text-transform: uppercase;
   }
 
   h1 {

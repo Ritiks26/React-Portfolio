@@ -24,6 +24,7 @@ function App({ connectOpen, setConnectOpen }) {
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
+      touchMultiplier: 0,
     });
 
     lenis.on("scroll", ScrollTrigger.update);

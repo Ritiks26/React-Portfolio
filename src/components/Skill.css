@@ -12,7 +12,8 @@
 
 .skill-container {
   width: 100%;
-  padding: 1.25rem;
+  height: 100svh;
+  padding: 1.5rem 1.25rem;
   overflow: hidden;
   font-family: var(--font-main);
 
@@ -26,17 +27,8 @@
     text-transform: uppercase;
     font-size: clamp(2rem, 0.8515rem + 4.9005vw, 4rem);
     font-weight: 700;
-    color: var(--clr-main);
-    font-family: "barlow condensed";
-  }
-
-  p {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
-    font-family: "general sans";
     color: var(--font-primary);
+    font-family: "barlow condensed";
   }
 }
 
@@ -125,15 +117,18 @@
   }
 }
 
-/* .skills-section {
+.skills-section {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   width: 100%;
+  height: 100%;
 
   h1 {
     line-height: 0.75;
     letter-spacing: -0.15rem;
-    font-size: 8rem;
+    font-size: clamp(3.25rem, 1.5775rem + 7.1362vw, 8rem);
+
+    color: var(--clr-main);
   }
-} */
+}
