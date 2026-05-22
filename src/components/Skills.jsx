@@ -93,38 +93,40 @@ export function Skill() {
   }, []);
 
   useGSAP(() => {
-    const skillContainer = gsap.utils.toArray(".skill-container");
+    if (window.innerWidth >= 1028) {
+      const skillContainer = gsap.utils.toArray(".skill-container");
 
-    skillContainer.forEach((section) => {
-      const skillSection = section.querySelector(".skills-section");
+      skillContainer.forEach((section) => {
+        const skillSection = section.querySelector(".skills-section");
 
-      const skillSectionPadding = parseFloat(
-        getComputedStyle(skillSection).padding,
-      );
+        const skillSectionPadding = parseFloat(
+          getComputedStyle(skillSection).padding,
+        );
 
-      const scrollDistance =
-        skillSection.scrollHeight - skillSection.clientHeight;
+        const scrollDistance =
+          skillSection.scrollHeight - skillSection.clientHeight;
 
-      gsap.set(".skills-section", {
-        y: 0,
+        gsap.set(".skills-section", {
+          y: 0,
+        });
+
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: `+=${scrollDistance}px`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            gsap.set(skillSection, {
+              y: progress * -scrollDistance,
+            });
+          },
+        });
       });
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: `+=${scrollDistance}px`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          gsap.set(skillSection, {
-            y: progress * -scrollDistance,
-          });
-        },
-      });
-    });
+    }
   }, []);
 
   return (
