@@ -58,9 +58,14 @@ export function Skill() {
 
   useGSAP(() => {
     document.fonts.ready.then(() => {
-      const skillHeading = SplitText.create(".skill-container h1", {
+      const skillHeading = SplitText.create(".skill-container h3", {
         type: "chars",
       });
+
+      const splitSkills = SplitText.create(".skill-container h1", {
+        type: "chars",
+      });
+
       const triggerTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".skill-container",
@@ -77,8 +82,18 @@ export function Skill() {
         yPercent: 100,
       });
 
+      gsap.set(splitSkills.chars, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        yPercent: 100,
+      });
+
       triggerTl
         .to(skillHeading.chars, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          yPercent: 0,
+          ease: "back.inOut",
+        })
+        .to(splitSkills.chars, {
           clipPath: "inset(0% 0% 0% 0%)",
           yPercent: 0,
           ease: "back.inOut",
@@ -131,7 +146,7 @@ export function Skill() {
 
   return (
     <div className="skill-container">
-      <h1>TECHSTACK</h1>
+      <h3>TECHSTACK</h3>
       {/* <div className="skills-grid">
         {coreSkills.map((skill, i) => (
           <div className="skills" key={i}>

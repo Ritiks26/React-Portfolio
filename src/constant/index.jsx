@@ -356,7 +356,7 @@ export const coreSkills = [
     ),
   },
   {
-    tech: "Github",
+    tech: "Git & Github",
     icon: (
       <>
         <svg
