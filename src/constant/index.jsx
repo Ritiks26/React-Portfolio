@@ -268,7 +268,7 @@ export const coreSkills = [
     ),
   },
   {
-    tech: "Lovable",
+    tech: "Codex",
     icon: (
       <>
         <svg
