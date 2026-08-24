@@ -33,11 +33,6 @@ export function Header({ connectOpen, setConnectOpen }) {
   });
   return (
     <header>
-      {/* <div className="logo">
-        <Link to={"/"}>
-          <p>Ritik Singh</p>
-        </Link>
-      </div> */}
       <Link to={"/"}>
         <div className="portfolio-of">front. dev.</div>
       </Link>
