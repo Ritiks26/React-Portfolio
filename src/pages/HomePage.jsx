@@ -7,6 +7,7 @@ import "./HomePage.css";
 export function HomePage() {
   return (
     <>
+      <title>RITIK SINGH | PORTFOLIO | HOME</title>
       <HeroPage />
       <About />
       <Skill />

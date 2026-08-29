@@ -72,85 +72,89 @@ export function Colophon() {
     { scope: containerRef },
   );
   return (
-    <section className="colophon-container" ref={containerRef}>
-      <div className="colophon-child">
-        <h1>colophon</h1>
-      </div>
+    <>
+      <title>RITIK SINGH | PORTFOLIO | COLOPHON</title>
 
-      <div className="tech-used">
-        <h3>technology</h3>
-        <h1>
-          <span style={{ color: "#353532" }}>Built with React JS, GSAP,</span>
-          <br />{" "}
-          <span style={{ color: "#aeaeae" }}>
-            and Lenis — smooth animations, clean
-          </span>
-          <br />
-          <span style={{ color: "#aeaeae" }}>design, deployed on Vercel</span>
-        </h1>
-      </div>
+      <section className="colophon-container" ref={containerRef}>
+        <div className="colophon-child">
+          <h1>colophon</h1>
+        </div>
 
-      <div className="design-section">
-        <h3>design</h3>
-        <h1>
-          <span style={{ color: "#353532" }}>
-            Minimal design, strong typography
-          </span>
-          <br />{" "}
-          <span style={{ color: "#aeaeae" }}>
-            with Satoshi and Barlow Condensed,
-          </span>
-          <br />
-          <span style={{ color: "#aeaeae" }}>
-            {" "}
-            icons via Heroicons and TechIcons.
-          </span>
-        </h1>
-      </div>
+        <div className="tech-used">
+          <h3>technology</h3>
+          <h1>
+            <span style={{ color: "#353532" }}>Built with React JS, GSAP,</span>
+            <br />{" "}
+            <span style={{ color: "#aeaeae" }}>
+              and Lenis — smooth animations, clean
+            </span>
+            <br />
+            <span style={{ color: "#aeaeae" }}>design, deployed on Vercel</span>
+          </h1>
+        </div>
 
-      <div className="inspire-section">
-        <h3>inspired</h3>
-        <h1>
-          <span style={{ color: "#353532" }}>
-            Inspired by modern portfolios
-          </span>
-          <br />{" "}
-          <span
-            style={{
-              color: "#aeaeae",
-              paddingLeft: "0.75rem",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            khoa phan
-          </span>
-          <br />
-          <span
-            style={{
-              color: "#aeaeae",
-              paddingLeft: "0.75rem",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            {" "}
-            codegrid
-          </span>
-          <br />
-          <span
-            style={{
-              color: "#aeaeae",
-              paddingLeft: "0.75rem",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            {" "}
-            sashasatchi
-          </span>
-        </h1>
-      </div>
-    </section>
+        <div className="design-section">
+          <h3>design</h3>
+          <h1>
+            <span style={{ color: "#353532" }}>
+              Minimal design, strong typography
+            </span>
+            <br />{" "}
+            <span style={{ color: "#aeaeae" }}>
+              with Satoshi and Barlow Condensed,
+            </span>
+            <br />
+            <span style={{ color: "#aeaeae" }}>
+              {" "}
+              icons via Heroicons and TechIcons.
+            </span>
+          </h1>
+        </div>
+
+        <div className="inspire-section">
+          <h3>inspired</h3>
+          <h1>
+            <span style={{ color: "#353532" }}>
+              Inspired by modern portfolios
+            </span>
+            <br />{" "}
+            <span
+              style={{
+                color: "#aeaeae",
+                paddingLeft: "0.75rem",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              khoa phan
+            </span>
+            <br />
+            <span
+              style={{
+                color: "#aeaeae",
+                paddingLeft: "0.75rem",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              codegrid
+            </span>
+            <br />
+            <span
+              style={{
+                color: "#aeaeae",
+                paddingLeft: "0.75rem",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
+              sashasatchi
+            </span>
+          </h1>
+        </div>
+      </section>
+    </>
   );
 }

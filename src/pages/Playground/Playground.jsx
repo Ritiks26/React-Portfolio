@@ -149,99 +149,102 @@ export function Playground() {
   }, []);
 
   return (
-    <section className="playground-container">
-      <section className="intro">
-        <h1 ref={playgroundHeadingRef}>playground</h1>
-      </section>
+    <>
+      <title>RITIK SINGH | PORTFOLIO | PLAYGROUND</title>
+      <section className="playground-container">
+        <section className="intro">
+          <h1 ref={playgroundHeadingRef}>playground</h1>
+        </section>
 
-      <section className="spotlight">
-        <div className="project-index">
-          <h1>
-            {String(currentIndex).padStart(2, "0")}/
-            {String(totalProjects).padStart(2, "0")}
-          </h1>
-        </div>
-        <div className="project-images">
-          <div className="project-image">
-            <video
-              playsInline
-              autoPlay
-              loop
-              muted
-              src="https://ik.imagekit.io/xlqvbmkcc/scroll-eft.mp4"
-            ></video>
+        <section className="spotlight">
+          <div className="project-index">
+            <h1>
+              {String(currentIndex).padStart(2, "0")}/
+              {String(totalProjects).padStart(2, "0")}
+            </h1>
           </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
+          <div className="project-images">
+            <div className="project-image">
+              <video
+                playsInline
+                autoPlay
+                loop
+                muted
+                src="https://ik.imagekit.io/xlqvbmkcc/scroll-eft.mp4"
+              ></video>
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
+            <div className="project-image">
+              <img
+                src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
+                alt=""
+              />
+            </div>
           </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
+          <div className="project-names">
+            <p>Center Pull Scroll</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
+            <p>Underdevelopment</p>
           </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-          <div className="project-image">
-            <img
-              src="https://cdn.sanity.io/images/92bwk9y2/production/df5652dfa5f37896581b2c635f81f77501f24a63-3856x2080.png?auto=format&fit=max&q=90&w=1446"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="project-names">
-          <p>Center Pull Scroll</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-          <p>Underdevelopment</p>
-        </div>
+        </section>
+        <section className="outro">
+          <p>Creativity has no limits</p>
+        </section>
       </section>
-      <section className="outro">
-        <p>Creativity has no limits</p>
-      </section>
-    </section>
+    </>
   );
 }
