@@ -379,7 +379,7 @@ export const coreSkills = [
     ),
   },
   {
-    tech: "Rest API",
+    tech: "API",
     icon: (
       <svg
         height="90"
